@@ -1,0 +1,23 @@
+{
+  "size": 100,
+  "profile": "light",
+  "jobs": 4,
+  "kind": "local-certification-not-official",
+  "all_passed": true,
+  "records": 42,
+  "scenario_names": [
+    "noop",
+    "leaf",
+    "private",
+    "medium",
+    "global",
+    "generated",
+    "batch10",
+    "batch10pct",
+    "relink",
+    "target",
+    "full",
+    "unrelated",
+    "deleted"
+  ]
+}

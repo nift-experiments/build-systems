@@ -1,0 +1,12 @@
+affected files: 
+0 of 1015 files built successfully
+time taken: 0.108211 seconds
+error: while building obj/u000000
+  hooks/obj/u000000.f:2:49
+  error: invalid user Error code
+    if(!result.launched || result.exit_code != 0) { throw error("Action failed: " + result.stderr, "build.action_failed") }
+                                                    ^
+error: while building lib/module00
+  blocked because prerequisite 'obj/u000000' failed
+error: while building bin/app
+  blocked because prerequisite 'lib/module00' failed

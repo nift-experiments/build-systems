@@ -1,0 +1,12 @@
+[1/12] ./tools/action-log obj/u000020 g++ -std=c++17 -O2 -g0 -fno-ident -MMD -MP -Iinputs/include -Ibuild/gen -MF build/obj/u000020.o.d -c inputs/src/u000020.cpp -o build/obj/u000020.o
+[2/12] ./tools/action-log obj/u000010 g++ -std=c++17 -O2 -g0 -fno-ident -MMD -MP -Iinputs/include -Ibuild/gen -MF build/obj/u000010.o.d -c inputs/src/u000010.cpp -o build/obj/u000010.o
+[3/12] ./tools/action-log obj/u000030 g++ -std=c++17 -O2 -g0 -fno-ident -MMD -MP -Iinputs/include -Ibuild/gen -MF build/obj/u000030.o.d -c inputs/src/u000030.cpp -o build/obj/u000030.o
+[4/12] ./tools/action-log obj/u000000 g++ -std=c++17 -O2 -g0 -fno-ident -MMD -MP -Iinputs/include -Ibuild/gen -MF build/obj/u000000.o.d -c inputs/src/u000000.cpp -o build/obj/u000000.o
+[5/12] ./tools/action-log obj/u000060 g++ -std=c++17 -O2 -g0 -fno-ident -MMD -MP -Iinputs/include -Ibuild/gen -MF build/obj/u000060.o.d -c inputs/src/u000060.cpp -o build/obj/u000060.o
+[6/12] ./tools/action-log obj/u000070 g++ -std=c++17 -O2 -g0 -fno-ident -MMD -MP -Iinputs/include -Ibuild/gen -MF build/obj/u000070.o.d -c inputs/src/u000070.cpp -o build/obj/u000070.o
+[7/12] ./tools/action-log obj/u000040 g++ -std=c++17 -O2 -g0 -fno-ident -MMD -MP -Iinputs/include -Ibuild/gen -MF build/obj/u000040.o.d -c inputs/src/u000040.cpp -o build/obj/u000040.o
+[8/12] ./tools/action-log obj/u000050 g++ -std=c++17 -O2 -g0 -fno-ident -MMD -MP -Iinputs/include -Ibuild/gen -MF build/obj/u000050.o.d -c inputs/src/u000050.cpp -o build/obj/u000050.o
+[9/12] ./tools/action-log obj/u000080 g++ -std=c++17 -O2 -g0 -fno-ident -MMD -MP -Iinputs/include -Ibuild/gen -MF build/obj/u000080.o.d -c inputs/src/u000080.cpp -o build/obj/u000080.o
+[10/12] ./tools/action-log obj/u000090 g++ -std=c++17 -O2 -g0 -fno-ident -MMD -MP -Iinputs/include -Ibuild/gen -MF build/obj/u000090.o.d -c inputs/src/u000090.cpp -o build/obj/u000090.o
+[11/12] ./tools/action-log lib/module00 ar rcsD build/lib/module00.a @response/module00.rsp
+[12/12] ./tools/action-log bin/app g++ @response/link.rsp -o build/bin/app.exe
