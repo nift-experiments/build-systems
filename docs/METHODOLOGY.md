@@ -33,3 +33,5 @@ No cloud resources before all local correctness gates and duration estimates pas
 ## Frozen source provenance
 
 The local v4.10.0 probe binary is not asserted to have been compiled from the later source checkout. Official Nift is rebuilt from tree `dc590bbb28b745d9005807af0d42f8e134860209`, commit `635996b7ff5c725c81ac8ef57b1d146f7ceda642`, reporting v4.11.0 development. The commit is initially local; `provenance/nift-frozen.patch` against public `2eaec7d70e9ce2e698d0ba23a605fb9cf85317ff` reconstructs the exact tree (verified with `git write-tree`). No core files are edited. Tool binaries, versions, OS/kernel/CPU/memory/filesystem and source/build identity accompany the official observations.
+
+Official Make 4.4.1 and Ninja 1.13.2 are built from upstream releases, with source archive/commit and binary hashes retained. Ubuntu package inventory is supplementary and must not be mistaken for the shadowing `/usr/local/bin` participant binaries. The frozen Nift CLI is source-built before this measurement; Make used to build that CLI is not itself measured. Tiny ten-action increments at 100/1,000 actions receive 20 samples rather than five.
