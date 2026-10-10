@@ -1,0 +1,5 @@
+rebuild causes:
+  ↳ generated output is missing → 1000 files
+affected files: action/a000000, action/a000001, action/a000002, action/a000003, action/a000004  +995 more
+📦 1000 files rebuilt successfully
+time taken: 1.607477 seconds

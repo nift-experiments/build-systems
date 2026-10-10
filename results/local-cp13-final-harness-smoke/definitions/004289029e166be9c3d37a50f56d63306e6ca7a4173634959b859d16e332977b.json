@@ -1,0 +1,1252 @@
+{
+  "tracked": [
+    {
+      "build": "hooks/gen/config.f",
+      "content-ext": ".json",
+      "depends": [],
+      "name": "gen/config",
+      "output-ext": ".h",
+      "title": "gen/config"
+    },
+    {
+      "build": "hooks/gen/generated.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "gen/generated",
+      "output-ext": ".cpp",
+      "title": "gen/generated"
+    },
+    {
+      "build": "hooks/obj/u000000.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000000",
+      "output-ext": ".o",
+      "title": "obj/u000000"
+    },
+    {
+      "build": "hooks/obj/u000001.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000001",
+      "output-ext": ".o",
+      "title": "obj/u000001"
+    },
+    {
+      "build": "hooks/obj/u000002.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000002",
+      "output-ext": ".o",
+      "title": "obj/u000002"
+    },
+    {
+      "build": "hooks/obj/u000003.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000003",
+      "output-ext": ".o",
+      "title": "obj/u000003"
+    },
+    {
+      "build": "hooks/obj/u000004.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000004",
+      "output-ext": ".o",
+      "title": "obj/u000004"
+    },
+    {
+      "build": "hooks/obj/u000005.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000005",
+      "output-ext": ".o",
+      "title": "obj/u000005"
+    },
+    {
+      "build": "hooks/obj/u000006.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000006",
+      "output-ext": ".o",
+      "title": "obj/u000006"
+    },
+    {
+      "build": "hooks/obj/u000007.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000007",
+      "output-ext": ".o",
+      "title": "obj/u000007"
+    },
+    {
+      "build": "hooks/obj/u000008.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000008",
+      "output-ext": ".o",
+      "title": "obj/u000008"
+    },
+    {
+      "build": "hooks/obj/u000009.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000009",
+      "output-ext": ".o",
+      "title": "obj/u000009"
+    },
+    {
+      "build": "hooks/obj/u000010.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000010",
+      "output-ext": ".o",
+      "title": "obj/u000010"
+    },
+    {
+      "build": "hooks/obj/u000011.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000011",
+      "output-ext": ".o",
+      "title": "obj/u000011"
+    },
+    {
+      "build": "hooks/obj/u000012.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000012",
+      "output-ext": ".o",
+      "title": "obj/u000012"
+    },
+    {
+      "build": "hooks/obj/u000013.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000013",
+      "output-ext": ".o",
+      "title": "obj/u000013"
+    },
+    {
+      "build": "hooks/obj/u000014.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000014",
+      "output-ext": ".o",
+      "title": "obj/u000014"
+    },
+    {
+      "build": "hooks/obj/u000015.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000015",
+      "output-ext": ".o",
+      "title": "obj/u000015"
+    },
+    {
+      "build": "hooks/obj/u000016.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000016",
+      "output-ext": ".o",
+      "title": "obj/u000016"
+    },
+    {
+      "build": "hooks/obj/u000017.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000017",
+      "output-ext": ".o",
+      "title": "obj/u000017"
+    },
+    {
+      "build": "hooks/obj/u000018.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000018",
+      "output-ext": ".o",
+      "title": "obj/u000018"
+    },
+    {
+      "build": "hooks/obj/u000019.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000019",
+      "output-ext": ".o",
+      "title": "obj/u000019"
+    },
+    {
+      "build": "hooks/obj/u000020.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000020",
+      "output-ext": ".o",
+      "title": "obj/u000020"
+    },
+    {
+      "build": "hooks/obj/u000021.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000021",
+      "output-ext": ".o",
+      "title": "obj/u000021"
+    },
+    {
+      "build": "hooks/obj/u000022.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000022",
+      "output-ext": ".o",
+      "title": "obj/u000022"
+    },
+    {
+      "build": "hooks/obj/u000023.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000023",
+      "output-ext": ".o",
+      "title": "obj/u000023"
+    },
+    {
+      "build": "hooks/obj/u000024.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000024",
+      "output-ext": ".o",
+      "title": "obj/u000024"
+    },
+    {
+      "build": "hooks/obj/u000025.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000025",
+      "output-ext": ".o",
+      "title": "obj/u000025"
+    },
+    {
+      "build": "hooks/obj/u000026.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000026",
+      "output-ext": ".o",
+      "title": "obj/u000026"
+    },
+    {
+      "build": "hooks/obj/u000027.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000027",
+      "output-ext": ".o",
+      "title": "obj/u000027"
+    },
+    {
+      "build": "hooks/obj/u000028.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000028",
+      "output-ext": ".o",
+      "title": "obj/u000028"
+    },
+    {
+      "build": "hooks/obj/u000029.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000029",
+      "output-ext": ".o",
+      "title": "obj/u000029"
+    },
+    {
+      "build": "hooks/obj/u000030.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000030",
+      "output-ext": ".o",
+      "title": "obj/u000030"
+    },
+    {
+      "build": "hooks/obj/u000031.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000031",
+      "output-ext": ".o",
+      "title": "obj/u000031"
+    },
+    {
+      "build": "hooks/obj/u000032.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000032",
+      "output-ext": ".o",
+      "title": "obj/u000032"
+    },
+    {
+      "build": "hooks/obj/u000033.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000033",
+      "output-ext": ".o",
+      "title": "obj/u000033"
+    },
+    {
+      "build": "hooks/obj/u000034.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000034",
+      "output-ext": ".o",
+      "title": "obj/u000034"
+    },
+    {
+      "build": "hooks/obj/u000035.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000035",
+      "output-ext": ".o",
+      "title": "obj/u000035"
+    },
+    {
+      "build": "hooks/obj/u000036.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000036",
+      "output-ext": ".o",
+      "title": "obj/u000036"
+    },
+    {
+      "build": "hooks/obj/u000037.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000037",
+      "output-ext": ".o",
+      "title": "obj/u000037"
+    },
+    {
+      "build": "hooks/obj/u000038.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000038",
+      "output-ext": ".o",
+      "title": "obj/u000038"
+    },
+    {
+      "build": "hooks/obj/u000039.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000039",
+      "output-ext": ".o",
+      "title": "obj/u000039"
+    },
+    {
+      "build": "hooks/obj/u000040.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000040",
+      "output-ext": ".o",
+      "title": "obj/u000040"
+    },
+    {
+      "build": "hooks/obj/u000041.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000041",
+      "output-ext": ".o",
+      "title": "obj/u000041"
+    },
+    {
+      "build": "hooks/obj/u000042.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000042",
+      "output-ext": ".o",
+      "title": "obj/u000042"
+    },
+    {
+      "build": "hooks/obj/u000043.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000043",
+      "output-ext": ".o",
+      "title": "obj/u000043"
+    },
+    {
+      "build": "hooks/obj/u000044.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000044",
+      "output-ext": ".o",
+      "title": "obj/u000044"
+    },
+    {
+      "build": "hooks/obj/u000045.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000045",
+      "output-ext": ".o",
+      "title": "obj/u000045"
+    },
+    {
+      "build": "hooks/obj/u000046.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000046",
+      "output-ext": ".o",
+      "title": "obj/u000046"
+    },
+    {
+      "build": "hooks/obj/u000047.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000047",
+      "output-ext": ".o",
+      "title": "obj/u000047"
+    },
+    {
+      "build": "hooks/obj/u000048.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000048",
+      "output-ext": ".o",
+      "title": "obj/u000048"
+    },
+    {
+      "build": "hooks/obj/u000049.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000049",
+      "output-ext": ".o",
+      "title": "obj/u000049"
+    },
+    {
+      "build": "hooks/obj/u000050.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000050",
+      "output-ext": ".o",
+      "title": "obj/u000050"
+    },
+    {
+      "build": "hooks/obj/u000051.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000051",
+      "output-ext": ".o",
+      "title": "obj/u000051"
+    },
+    {
+      "build": "hooks/obj/u000052.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000052",
+      "output-ext": ".o",
+      "title": "obj/u000052"
+    },
+    {
+      "build": "hooks/obj/u000053.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000053",
+      "output-ext": ".o",
+      "title": "obj/u000053"
+    },
+    {
+      "build": "hooks/obj/u000054.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000054",
+      "output-ext": ".o",
+      "title": "obj/u000054"
+    },
+    {
+      "build": "hooks/obj/u000055.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000055",
+      "output-ext": ".o",
+      "title": "obj/u000055"
+    },
+    {
+      "build": "hooks/obj/u000056.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000056",
+      "output-ext": ".o",
+      "title": "obj/u000056"
+    },
+    {
+      "build": "hooks/obj/u000057.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000057",
+      "output-ext": ".o",
+      "title": "obj/u000057"
+    },
+    {
+      "build": "hooks/obj/u000058.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000058",
+      "output-ext": ".o",
+      "title": "obj/u000058"
+    },
+    {
+      "build": "hooks/obj/u000059.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000059",
+      "output-ext": ".o",
+      "title": "obj/u000059"
+    },
+    {
+      "build": "hooks/obj/u000060.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000060",
+      "output-ext": ".o",
+      "title": "obj/u000060"
+    },
+    {
+      "build": "hooks/obj/u000061.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000061",
+      "output-ext": ".o",
+      "title": "obj/u000061"
+    },
+    {
+      "build": "hooks/obj/u000062.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000062",
+      "output-ext": ".o",
+      "title": "obj/u000062"
+    },
+    {
+      "build": "hooks/obj/u000063.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000063",
+      "output-ext": ".o",
+      "title": "obj/u000063"
+    },
+    {
+      "build": "hooks/obj/u000064.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000064",
+      "output-ext": ".o",
+      "title": "obj/u000064"
+    },
+    {
+      "build": "hooks/obj/u000065.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000065",
+      "output-ext": ".o",
+      "title": "obj/u000065"
+    },
+    {
+      "build": "hooks/obj/u000066.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000066",
+      "output-ext": ".o",
+      "title": "obj/u000066"
+    },
+    {
+      "build": "hooks/obj/u000067.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000067",
+      "output-ext": ".o",
+      "title": "obj/u000067"
+    },
+    {
+      "build": "hooks/obj/u000068.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000068",
+      "output-ext": ".o",
+      "title": "obj/u000068"
+    },
+    {
+      "build": "hooks/obj/u000069.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000069",
+      "output-ext": ".o",
+      "title": "obj/u000069"
+    },
+    {
+      "build": "hooks/obj/u000070.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000070",
+      "output-ext": ".o",
+      "title": "obj/u000070"
+    },
+    {
+      "build": "hooks/obj/u000071.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000071",
+      "output-ext": ".o",
+      "title": "obj/u000071"
+    },
+    {
+      "build": "hooks/obj/u000072.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000072",
+      "output-ext": ".o",
+      "title": "obj/u000072"
+    },
+    {
+      "build": "hooks/obj/u000073.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000073",
+      "output-ext": ".o",
+      "title": "obj/u000073"
+    },
+    {
+      "build": "hooks/obj/u000074.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000074",
+      "output-ext": ".o",
+      "title": "obj/u000074"
+    },
+    {
+      "build": "hooks/obj/u000075.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000075",
+      "output-ext": ".o",
+      "title": "obj/u000075"
+    },
+    {
+      "build": "hooks/obj/u000076.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000076",
+      "output-ext": ".o",
+      "title": "obj/u000076"
+    },
+    {
+      "build": "hooks/obj/u000077.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000077",
+      "output-ext": ".o",
+      "title": "obj/u000077"
+    },
+    {
+      "build": "hooks/obj/u000078.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000078",
+      "output-ext": ".o",
+      "title": "obj/u000078"
+    },
+    {
+      "build": "hooks/obj/u000079.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000079",
+      "output-ext": ".o",
+      "title": "obj/u000079"
+    },
+    {
+      "build": "hooks/obj/u000080.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000080",
+      "output-ext": ".o",
+      "title": "obj/u000080"
+    },
+    {
+      "build": "hooks/obj/u000081.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000081",
+      "output-ext": ".o",
+      "title": "obj/u000081"
+    },
+    {
+      "build": "hooks/obj/u000082.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000082",
+      "output-ext": ".o",
+      "title": "obj/u000082"
+    },
+    {
+      "build": "hooks/obj/u000083.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000083",
+      "output-ext": ".o",
+      "title": "obj/u000083"
+    },
+    {
+      "build": "hooks/obj/u000084.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000084",
+      "output-ext": ".o",
+      "title": "obj/u000084"
+    },
+    {
+      "build": "hooks/obj/u000085.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000085",
+      "output-ext": ".o",
+      "title": "obj/u000085"
+    },
+    {
+      "build": "hooks/obj/u000086.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000086",
+      "output-ext": ".o",
+      "title": "obj/u000086"
+    },
+    {
+      "build": "hooks/obj/u000087.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000087",
+      "output-ext": ".o",
+      "title": "obj/u000087"
+    },
+    {
+      "build": "hooks/obj/u000088.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000088",
+      "output-ext": ".o",
+      "title": "obj/u000088"
+    },
+    {
+      "build": "hooks/obj/u000089.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000089",
+      "output-ext": ".o",
+      "title": "obj/u000089"
+    },
+    {
+      "build": "hooks/obj/u000090.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000090",
+      "output-ext": ".o",
+      "title": "obj/u000090"
+    },
+    {
+      "build": "hooks/obj/u000091.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000091",
+      "output-ext": ".o",
+      "title": "obj/u000091"
+    },
+    {
+      "build": "hooks/obj/u000092.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000092",
+      "output-ext": ".o",
+      "title": "obj/u000092"
+    },
+    {
+      "build": "hooks/obj/u000093.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000093",
+      "output-ext": ".o",
+      "title": "obj/u000093"
+    },
+    {
+      "build": "hooks/obj/u000094.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000094",
+      "output-ext": ".o",
+      "title": "obj/u000094"
+    },
+    {
+      "build": "hooks/obj/u000095.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000095",
+      "output-ext": ".o",
+      "title": "obj/u000095"
+    },
+    {
+      "build": "hooks/obj/u000096.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000096",
+      "output-ext": ".o",
+      "title": "obj/u000096"
+    },
+    {
+      "build": "hooks/obj/u000097.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000097",
+      "output-ext": ".o",
+      "title": "obj/u000097"
+    },
+    {
+      "build": "hooks/obj/u000098.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000098",
+      "output-ext": ".o",
+      "title": "obj/u000098"
+    },
+    {
+      "build": "hooks/obj/u000099.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/config"
+      ],
+      "name": "obj/u000099",
+      "output-ext": ".o",
+      "title": "obj/u000099"
+    },
+    {
+      "build": "hooks/obj/generated.f",
+      "content-ext": ".json",
+      "depends": [
+        "gen/generated",
+        "gen/config"
+      ],
+      "name": "obj/generated",
+      "output-ext": ".o",
+      "title": "obj/generated"
+    },
+    {
+      "build": "hooks/obj/main.f",
+      "content-ext": ".json",
+      "depends": [],
+      "name": "obj/main",
+      "output-ext": ".o",
+      "title": "obj/main"
+    },
+    {
+      "build": "hooks/lib/module00.f",
+      "content-ext": ".json",
+      "depends": [
+        "obj/u000000",
+        "obj/u000010",
+        "obj/u000020",
+        "obj/u000030",
+        "obj/u000040",
+        "obj/u000050",
+        "obj/u000060",
+        "obj/u000070",
+        "obj/u000080",
+        "obj/u000090"
+      ],
+      "name": "lib/module00",
+      "output-ext": ".a",
+      "title": "lib/module00"
+    },
+    {
+      "build": "hooks/lib/module01.f",
+      "content-ext": ".json",
+      "depends": [
+        "obj/u000001",
+        "obj/u000011",
+        "obj/u000021",
+        "obj/u000031",
+        "obj/u000041",
+        "obj/u000051",
+        "obj/u000061",
+        "obj/u000071",
+        "obj/u000081",
+        "obj/u000091"
+      ],
+      "name": "lib/module01",
+      "output-ext": ".a",
+      "title": "lib/module01"
+    },
+    {
+      "build": "hooks/lib/module02.f",
+      "content-ext": ".json",
+      "depends": [
+        "obj/u000002",
+        "obj/u000012",
+        "obj/u000022",
+        "obj/u000032",
+        "obj/u000042",
+        "obj/u000052",
+        "obj/u000062",
+        "obj/u000072",
+        "obj/u000082",
+        "obj/u000092"
+      ],
+      "name": "lib/module02",
+      "output-ext": ".a",
+      "title": "lib/module02"
+    },
+    {
+      "build": "hooks/lib/module03.f",
+      "content-ext": ".json",
+      "depends": [
+        "obj/u000003",
+        "obj/u000013",
+        "obj/u000023",
+        "obj/u000033",
+        "obj/u000043",
+        "obj/u000053",
+        "obj/u000063",
+        "obj/u000073",
+        "obj/u000083",
+        "obj/u000093"
+      ],
+      "name": "lib/module03",
+      "output-ext": ".a",
+      "title": "lib/module03"
+    },
+    {
+      "build": "hooks/lib/module04.f",
+      "content-ext": ".json",
+      "depends": [
+        "obj/u000004",
+        "obj/u000014",
+        "obj/u000024",
+        "obj/u000034",
+        "obj/u000044",
+        "obj/u000054",
+        "obj/u000064",
+        "obj/u000074",
+        "obj/u000084",
+        "obj/u000094"
+      ],
+      "name": "lib/module04",
+      "output-ext": ".a",
+      "title": "lib/module04"
+    },
+    {
+      "build": "hooks/lib/module05.f",
+      "content-ext": ".json",
+      "depends": [
+        "obj/u000005",
+        "obj/u000015",
+        "obj/u000025",
+        "obj/u000035",
+        "obj/u000045",
+        "obj/u000055",
+        "obj/u000065",
+        "obj/u000075",
+        "obj/u000085",
+        "obj/u000095"
+      ],
+      "name": "lib/module05",
+      "output-ext": ".a",
+      "title": "lib/module05"
+    },
+    {
+      "build": "hooks/lib/module06.f",
+      "content-ext": ".json",
+      "depends": [
+        "obj/u000006",
+        "obj/u000016",
+        "obj/u000026",
+        "obj/u000036",
+        "obj/u000046",
+        "obj/u000056",
+        "obj/u000066",
+        "obj/u000076",
+        "obj/u000086",
+        "obj/u000096"
+      ],
+      "name": "lib/module06",
+      "output-ext": ".a",
+      "title": "lib/module06"
+    },
+    {
+      "build": "hooks/lib/module07.f",
+      "content-ext": ".json",
+      "depends": [
+        "obj/u000007",
+        "obj/u000017",
+        "obj/u000027",
+        "obj/u000037",
+        "obj/u000047",
+        "obj/u000057",
+        "obj/u000067",
+        "obj/u000077",
+        "obj/u000087",
+        "obj/u000097"
+      ],
+      "name": "lib/module07",
+      "output-ext": ".a",
+      "title": "lib/module07"
+    },
+    {
+      "build": "hooks/lib/module08.f",
+      "content-ext": ".json",
+      "depends": [
+        "obj/u000008",
+        "obj/u000018",
+        "obj/u000028",
+        "obj/u000038",
+        "obj/u000048",
+        "obj/u000058",
+        "obj/u000068",
+        "obj/u000078",
+        "obj/u000088",
+        "obj/u000098"
+      ],
+      "name": "lib/module08",
+      "output-ext": ".a",
+      "title": "lib/module08"
+    },
+    {
+      "build": "hooks/lib/module09.f",
+      "content-ext": ".json",
+      "depends": [
+        "obj/u000009",
+        "obj/u000019",
+        "obj/u000029",
+        "obj/u000039",
+        "obj/u000049",
+        "obj/u000059",
+        "obj/u000069",
+        "obj/u000079",
+        "obj/u000089",
+        "obj/u000099"
+      ],
+      "name": "lib/module09",
+      "output-ext": ".a",
+      "title": "lib/module09"
+    },
+    {
+      "build": "hooks/bin/app.f",
+      "content-ext": ".json",
+      "depends": [
+        "obj/main",
+        "obj/generated",
+        "lib/module00",
+        "lib/module01",
+        "lib/module02",
+        "lib/module03",
+        "lib/module04",
+        "lib/module05",
+        "lib/module06",
+        "lib/module07",
+        "lib/module08",
+        "lib/module09"
+      ],
+      "name": "bin/app",
+      "output-ext": ".exe",
+      "title": "bin/app"
+    }
+  ]
+}

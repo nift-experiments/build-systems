@@ -1,0 +1,14 @@
+affected files: 
+0 of 10015 files built successfully
+time taken: 1.077768 seconds
+error: while building obj/u000000
+  hooks/obj/u000000.f:2:49
+  Action failed: cc1plus: fatal error: inputs/src/u000000.cpp: No such file or directory
+compilation terminated.
+
+    if(!result.launched || result.exit_code != 0) { throw error("Action failed: " + result.stderr, "user.build.action_failed") }
+                                                    ^
+error: while building lib/module00
+  blocked because prerequisite 'obj/u000000' failed
+error: while building bin/app
+  blocked because prerequisite 'lib/module00' failed

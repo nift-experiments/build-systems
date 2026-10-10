@@ -1,0 +1,206 @@
+MAKEFLAGS += --no-builtin-rules --no-builtin-variables
+.SUFFIXES:
+.DELETE_ON_ERROR:
+.PHONY: all
+all: build/action/a000000.out build/action/a000001.out build/action/a000002.out build/action/a000003.out build/action/a000004.out build/action/a000005.out build/action/a000006.out build/action/a000007.out build/action/a000008.out build/action/a000009.out build/action/a000010.out build/action/a000011.out build/action/a000012.out build/action/a000013.out build/action/a000014.out build/action/a000015.out build/action/a000016.out build/action/a000017.out build/action/a000018.out build/action/a000019.out build/action/a000020.out build/action/a000021.out build/action/a000022.out build/action/a000023.out build/action/a000024.out build/action/a000025.out build/action/a000026.out build/action/a000027.out build/action/a000028.out build/action/a000029.out build/action/a000030.out build/action/a000031.out build/action/a000032.out build/action/a000033.out build/action/a000034.out build/action/a000035.out build/action/a000036.out build/action/a000037.out build/action/a000038.out build/action/a000039.out build/action/a000040.out build/action/a000041.out build/action/a000042.out build/action/a000043.out build/action/a000044.out build/action/a000045.out build/action/a000046.out build/action/a000047.out build/action/a000048.out build/action/a000049.out build/action/a000050.out build/action/a000051.out build/action/a000052.out build/action/a000053.out build/action/a000054.out build/action/a000055.out build/action/a000056.out build/action/a000057.out build/action/a000058.out build/action/a000059.out build/action/a000060.out build/action/a000061.out build/action/a000062.out build/action/a000063.out build/action/a000064.out build/action/a000065.out build/action/a000066.out build/action/a000067.out build/action/a000068.out build/action/a000069.out build/action/a000070.out build/action/a000071.out build/action/a000072.out build/action/a000073.out build/action/a000074.out build/action/a000075.out build/action/a000076.out build/action/a000077.out build/action/a000078.out build/action/a000079.out build/action/a000080.out build/action/a000081.out build/action/a000082.out build/action/a000083.out build/action/a000084.out build/action/a000085.out build/action/a000086.out build/action/a000087.out build/action/a000088.out build/action/a000089.out build/action/a000090.out build/action/a000091.out build/action/a000092.out build/action/a000093.out build/action/a000094.out build/action/a000095.out build/action/a000096.out build/action/a000097.out build/action/a000098.out build/action/a000099.out
+build/action/a000000.out: inputs/a000000.txt recipes/action/a000000.json
+	./tools/action-log action/a000000 ./tools/tiny-action inputs/a000000.txt build/action/a000000.out
+build/action/a000001.out: inputs/a000001.txt recipes/action/a000001.json
+	./tools/action-log action/a000001 ./tools/tiny-action inputs/a000001.txt build/action/a000001.out
+build/action/a000002.out: inputs/a000002.txt recipes/action/a000002.json
+	./tools/action-log action/a000002 ./tools/tiny-action inputs/a000002.txt build/action/a000002.out
+build/action/a000003.out: inputs/a000003.txt recipes/action/a000003.json
+	./tools/action-log action/a000003 ./tools/tiny-action inputs/a000003.txt build/action/a000003.out
+build/action/a000004.out: inputs/a000004.txt recipes/action/a000004.json
+	./tools/action-log action/a000004 ./tools/tiny-action inputs/a000004.txt build/action/a000004.out
+build/action/a000005.out: inputs/a000005.txt recipes/action/a000005.json
+	./tools/action-log action/a000005 ./tools/tiny-action inputs/a000005.txt build/action/a000005.out
+build/action/a000006.out: inputs/a000006.txt recipes/action/a000006.json
+	./tools/action-log action/a000006 ./tools/tiny-action inputs/a000006.txt build/action/a000006.out
+build/action/a000007.out: inputs/a000007.txt recipes/action/a000007.json
+	./tools/action-log action/a000007 ./tools/tiny-action inputs/a000007.txt build/action/a000007.out
+build/action/a000008.out: inputs/a000008.txt recipes/action/a000008.json
+	./tools/action-log action/a000008 ./tools/tiny-action inputs/a000008.txt build/action/a000008.out
+build/action/a000009.out: inputs/a000009.txt recipes/action/a000009.json
+	./tools/action-log action/a000009 ./tools/tiny-action inputs/a000009.txt build/action/a000009.out
+build/action/a000010.out: inputs/a000010.txt recipes/action/a000010.json
+	./tools/action-log action/a000010 ./tools/tiny-action inputs/a000010.txt build/action/a000010.out
+build/action/a000011.out: inputs/a000011.txt recipes/action/a000011.json
+	./tools/action-log action/a000011 ./tools/tiny-action inputs/a000011.txt build/action/a000011.out
+build/action/a000012.out: inputs/a000012.txt recipes/action/a000012.json
+	./tools/action-log action/a000012 ./tools/tiny-action inputs/a000012.txt build/action/a000012.out
+build/action/a000013.out: inputs/a000013.txt recipes/action/a000013.json
+	./tools/action-log action/a000013 ./tools/tiny-action inputs/a000013.txt build/action/a000013.out
+build/action/a000014.out: inputs/a000014.txt recipes/action/a000014.json
+	./tools/action-log action/a000014 ./tools/tiny-action inputs/a000014.txt build/action/a000014.out
+build/action/a000015.out: inputs/a000015.txt recipes/action/a000015.json
+	./tools/action-log action/a000015 ./tools/tiny-action inputs/a000015.txt build/action/a000015.out
+build/action/a000016.out: inputs/a000016.txt recipes/action/a000016.json
+	./tools/action-log action/a000016 ./tools/tiny-action inputs/a000016.txt build/action/a000016.out
+build/action/a000017.out: inputs/a000017.txt recipes/action/a000017.json
+	./tools/action-log action/a000017 ./tools/tiny-action inputs/a000017.txt build/action/a000017.out
+build/action/a000018.out: inputs/a000018.txt recipes/action/a000018.json
+	./tools/action-log action/a000018 ./tools/tiny-action inputs/a000018.txt build/action/a000018.out
+build/action/a000019.out: inputs/a000019.txt recipes/action/a000019.json
+	./tools/action-log action/a000019 ./tools/tiny-action inputs/a000019.txt build/action/a000019.out
+build/action/a000020.out: inputs/a000020.txt recipes/action/a000020.json
+	./tools/action-log action/a000020 ./tools/tiny-action inputs/a000020.txt build/action/a000020.out
+build/action/a000021.out: inputs/a000021.txt recipes/action/a000021.json
+	./tools/action-log action/a000021 ./tools/tiny-action inputs/a000021.txt build/action/a000021.out
+build/action/a000022.out: inputs/a000022.txt recipes/action/a000022.json
+	./tools/action-log action/a000022 ./tools/tiny-action inputs/a000022.txt build/action/a000022.out
+build/action/a000023.out: inputs/a000023.txt recipes/action/a000023.json
+	./tools/action-log action/a000023 ./tools/tiny-action inputs/a000023.txt build/action/a000023.out
+build/action/a000024.out: inputs/a000024.txt recipes/action/a000024.json
+	./tools/action-log action/a000024 ./tools/tiny-action inputs/a000024.txt build/action/a000024.out
+build/action/a000025.out: inputs/a000025.txt recipes/action/a000025.json
+	./tools/action-log action/a000025 ./tools/tiny-action inputs/a000025.txt build/action/a000025.out
+build/action/a000026.out: inputs/a000026.txt recipes/action/a000026.json
+	./tools/action-log action/a000026 ./tools/tiny-action inputs/a000026.txt build/action/a000026.out
+build/action/a000027.out: inputs/a000027.txt recipes/action/a000027.json
+	./tools/action-log action/a000027 ./tools/tiny-action inputs/a000027.txt build/action/a000027.out
+build/action/a000028.out: inputs/a000028.txt recipes/action/a000028.json
+	./tools/action-log action/a000028 ./tools/tiny-action inputs/a000028.txt build/action/a000028.out
+build/action/a000029.out: inputs/a000029.txt recipes/action/a000029.json
+	./tools/action-log action/a000029 ./tools/tiny-action inputs/a000029.txt build/action/a000029.out
+build/action/a000030.out: inputs/a000030.txt recipes/action/a000030.json
+	./tools/action-log action/a000030 ./tools/tiny-action inputs/a000030.txt build/action/a000030.out
+build/action/a000031.out: inputs/a000031.txt recipes/action/a000031.json
+	./tools/action-log action/a000031 ./tools/tiny-action inputs/a000031.txt build/action/a000031.out
+build/action/a000032.out: inputs/a000032.txt recipes/action/a000032.json
+	./tools/action-log action/a000032 ./tools/tiny-action inputs/a000032.txt build/action/a000032.out
+build/action/a000033.out: inputs/a000033.txt recipes/action/a000033.json
+	./tools/action-log action/a000033 ./tools/tiny-action inputs/a000033.txt build/action/a000033.out
+build/action/a000034.out: inputs/a000034.txt recipes/action/a000034.json
+	./tools/action-log action/a000034 ./tools/tiny-action inputs/a000034.txt build/action/a000034.out
+build/action/a000035.out: inputs/a000035.txt recipes/action/a000035.json
+	./tools/action-log action/a000035 ./tools/tiny-action inputs/a000035.txt build/action/a000035.out
+build/action/a000036.out: inputs/a000036.txt recipes/action/a000036.json
+	./tools/action-log action/a000036 ./tools/tiny-action inputs/a000036.txt build/action/a000036.out
+build/action/a000037.out: inputs/a000037.txt recipes/action/a000037.json
+	./tools/action-log action/a000037 ./tools/tiny-action inputs/a000037.txt build/action/a000037.out
+build/action/a000038.out: inputs/a000038.txt recipes/action/a000038.json
+	./tools/action-log action/a000038 ./tools/tiny-action inputs/a000038.txt build/action/a000038.out
+build/action/a000039.out: inputs/a000039.txt recipes/action/a000039.json
+	./tools/action-log action/a000039 ./tools/tiny-action inputs/a000039.txt build/action/a000039.out
+build/action/a000040.out: inputs/a000040.txt recipes/action/a000040.json
+	./tools/action-log action/a000040 ./tools/tiny-action inputs/a000040.txt build/action/a000040.out
+build/action/a000041.out: inputs/a000041.txt recipes/action/a000041.json
+	./tools/action-log action/a000041 ./tools/tiny-action inputs/a000041.txt build/action/a000041.out
+build/action/a000042.out: inputs/a000042.txt recipes/action/a000042.json
+	./tools/action-log action/a000042 ./tools/tiny-action inputs/a000042.txt build/action/a000042.out
+build/action/a000043.out: inputs/a000043.txt recipes/action/a000043.json
+	./tools/action-log action/a000043 ./tools/tiny-action inputs/a000043.txt build/action/a000043.out
+build/action/a000044.out: inputs/a000044.txt recipes/action/a000044.json
+	./tools/action-log action/a000044 ./tools/tiny-action inputs/a000044.txt build/action/a000044.out
+build/action/a000045.out: inputs/a000045.txt recipes/action/a000045.json
+	./tools/action-log action/a000045 ./tools/tiny-action inputs/a000045.txt build/action/a000045.out
+build/action/a000046.out: inputs/a000046.txt recipes/action/a000046.json
+	./tools/action-log action/a000046 ./tools/tiny-action inputs/a000046.txt build/action/a000046.out
+build/action/a000047.out: inputs/a000047.txt recipes/action/a000047.json
+	./tools/action-log action/a000047 ./tools/tiny-action inputs/a000047.txt build/action/a000047.out
+build/action/a000048.out: inputs/a000048.txt recipes/action/a000048.json
+	./tools/action-log action/a000048 ./tools/tiny-action inputs/a000048.txt build/action/a000048.out
+build/action/a000049.out: inputs/a000049.txt recipes/action/a000049.json
+	./tools/action-log action/a000049 ./tools/tiny-action inputs/a000049.txt build/action/a000049.out
+build/action/a000050.out: inputs/a000050.txt recipes/action/a000050.json
+	./tools/action-log action/a000050 ./tools/tiny-action inputs/a000050.txt build/action/a000050.out
+build/action/a000051.out: inputs/a000051.txt recipes/action/a000051.json
+	./tools/action-log action/a000051 ./tools/tiny-action inputs/a000051.txt build/action/a000051.out
+build/action/a000052.out: inputs/a000052.txt recipes/action/a000052.json
+	./tools/action-log action/a000052 ./tools/tiny-action inputs/a000052.txt build/action/a000052.out
+build/action/a000053.out: inputs/a000053.txt recipes/action/a000053.json
+	./tools/action-log action/a000053 ./tools/tiny-action inputs/a000053.txt build/action/a000053.out
+build/action/a000054.out: inputs/a000054.txt recipes/action/a000054.json
+	./tools/action-log action/a000054 ./tools/tiny-action inputs/a000054.txt build/action/a000054.out
+build/action/a000055.out: inputs/a000055.txt recipes/action/a000055.json
+	./tools/action-log action/a000055 ./tools/tiny-action inputs/a000055.txt build/action/a000055.out
+build/action/a000056.out: inputs/a000056.txt recipes/action/a000056.json
+	./tools/action-log action/a000056 ./tools/tiny-action inputs/a000056.txt build/action/a000056.out
+build/action/a000057.out: inputs/a000057.txt recipes/action/a000057.json
+	./tools/action-log action/a000057 ./tools/tiny-action inputs/a000057.txt build/action/a000057.out
+build/action/a000058.out: inputs/a000058.txt recipes/action/a000058.json
+	./tools/action-log action/a000058 ./tools/tiny-action inputs/a000058.txt build/action/a000058.out
+build/action/a000059.out: inputs/a000059.txt recipes/action/a000059.json
+	./tools/action-log action/a000059 ./tools/tiny-action inputs/a000059.txt build/action/a000059.out
+build/action/a000060.out: inputs/a000060.txt recipes/action/a000060.json
+	./tools/action-log action/a000060 ./tools/tiny-action inputs/a000060.txt build/action/a000060.out
+build/action/a000061.out: inputs/a000061.txt recipes/action/a000061.json
+	./tools/action-log action/a000061 ./tools/tiny-action inputs/a000061.txt build/action/a000061.out
+build/action/a000062.out: inputs/a000062.txt recipes/action/a000062.json
+	./tools/action-log action/a000062 ./tools/tiny-action inputs/a000062.txt build/action/a000062.out
+build/action/a000063.out: inputs/a000063.txt recipes/action/a000063.json
+	./tools/action-log action/a000063 ./tools/tiny-action inputs/a000063.txt build/action/a000063.out
+build/action/a000064.out: inputs/a000064.txt recipes/action/a000064.json
+	./tools/action-log action/a000064 ./tools/tiny-action inputs/a000064.txt build/action/a000064.out
+build/action/a000065.out: inputs/a000065.txt recipes/action/a000065.json
+	./tools/action-log action/a000065 ./tools/tiny-action inputs/a000065.txt build/action/a000065.out
+build/action/a000066.out: inputs/a000066.txt recipes/action/a000066.json
+	./tools/action-log action/a000066 ./tools/tiny-action inputs/a000066.txt build/action/a000066.out
+build/action/a000067.out: inputs/a000067.txt recipes/action/a000067.json
+	./tools/action-log action/a000067 ./tools/tiny-action inputs/a000067.txt build/action/a000067.out
+build/action/a000068.out: inputs/a000068.txt recipes/action/a000068.json
+	./tools/action-log action/a000068 ./tools/tiny-action inputs/a000068.txt build/action/a000068.out
+build/action/a000069.out: inputs/a000069.txt recipes/action/a000069.json
+	./tools/action-log action/a000069 ./tools/tiny-action inputs/a000069.txt build/action/a000069.out
+build/action/a000070.out: inputs/a000070.txt recipes/action/a000070.json
+	./tools/action-log action/a000070 ./tools/tiny-action inputs/a000070.txt build/action/a000070.out
+build/action/a000071.out: inputs/a000071.txt recipes/action/a000071.json
+	./tools/action-log action/a000071 ./tools/tiny-action inputs/a000071.txt build/action/a000071.out
+build/action/a000072.out: inputs/a000072.txt recipes/action/a000072.json
+	./tools/action-log action/a000072 ./tools/tiny-action inputs/a000072.txt build/action/a000072.out
+build/action/a000073.out: inputs/a000073.txt recipes/action/a000073.json
+	./tools/action-log action/a000073 ./tools/tiny-action inputs/a000073.txt build/action/a000073.out
+build/action/a000074.out: inputs/a000074.txt recipes/action/a000074.json
+	./tools/action-log action/a000074 ./tools/tiny-action inputs/a000074.txt build/action/a000074.out
+build/action/a000075.out: inputs/a000075.txt recipes/action/a000075.json
+	./tools/action-log action/a000075 ./tools/tiny-action inputs/a000075.txt build/action/a000075.out
+build/action/a000076.out: inputs/a000076.txt recipes/action/a000076.json
+	./tools/action-log action/a000076 ./tools/tiny-action inputs/a000076.txt build/action/a000076.out
+build/action/a000077.out: inputs/a000077.txt recipes/action/a000077.json
+	./tools/action-log action/a000077 ./tools/tiny-action inputs/a000077.txt build/action/a000077.out
+build/action/a000078.out: inputs/a000078.txt recipes/action/a000078.json
+	./tools/action-log action/a000078 ./tools/tiny-action inputs/a000078.txt build/action/a000078.out
+build/action/a000079.out: inputs/a000079.txt recipes/action/a000079.json
+	./tools/action-log action/a000079 ./tools/tiny-action inputs/a000079.txt build/action/a000079.out
+build/action/a000080.out: inputs/a000080.txt recipes/action/a000080.json
+	./tools/action-log action/a000080 ./tools/tiny-action inputs/a000080.txt build/action/a000080.out
+build/action/a000081.out: inputs/a000081.txt recipes/action/a000081.json
+	./tools/action-log action/a000081 ./tools/tiny-action inputs/a000081.txt build/action/a000081.out
+build/action/a000082.out: inputs/a000082.txt recipes/action/a000082.json
+	./tools/action-log action/a000082 ./tools/tiny-action inputs/a000082.txt build/action/a000082.out
+build/action/a000083.out: inputs/a000083.txt recipes/action/a000083.json
+	./tools/action-log action/a000083 ./tools/tiny-action inputs/a000083.txt build/action/a000083.out
+build/action/a000084.out: inputs/a000084.txt recipes/action/a000084.json
+	./tools/action-log action/a000084 ./tools/tiny-action inputs/a000084.txt build/action/a000084.out
+build/action/a000085.out: inputs/a000085.txt recipes/action/a000085.json
+	./tools/action-log action/a000085 ./tools/tiny-action inputs/a000085.txt build/action/a000085.out
+build/action/a000086.out: inputs/a000086.txt recipes/action/a000086.json
+	./tools/action-log action/a000086 ./tools/tiny-action inputs/a000086.txt build/action/a000086.out
+build/action/a000087.out: inputs/a000087.txt recipes/action/a000087.json
+	./tools/action-log action/a000087 ./tools/tiny-action inputs/a000087.txt build/action/a000087.out
+build/action/a000088.out: inputs/a000088.txt recipes/action/a000088.json
+	./tools/action-log action/a000088 ./tools/tiny-action inputs/a000088.txt build/action/a000088.out
+build/action/a000089.out: inputs/a000089.txt recipes/action/a000089.json
+	./tools/action-log action/a000089 ./tools/tiny-action inputs/a000089.txt build/action/a000089.out
+build/action/a000090.out: inputs/a000090.txt recipes/action/a000090.json
+	./tools/action-log action/a000090 ./tools/tiny-action inputs/a000090.txt build/action/a000090.out
+build/action/a000091.out: inputs/a000091.txt recipes/action/a000091.json
+	./tools/action-log action/a000091 ./tools/tiny-action inputs/a000091.txt build/action/a000091.out
+build/action/a000092.out: inputs/a000092.txt recipes/action/a000092.json
+	./tools/action-log action/a000092 ./tools/tiny-action inputs/a000092.txt build/action/a000092.out
+build/action/a000093.out: inputs/a000093.txt recipes/action/a000093.json
+	./tools/action-log action/a000093 ./tools/tiny-action inputs/a000093.txt build/action/a000093.out
+build/action/a000094.out: inputs/a000094.txt recipes/action/a000094.json
+	./tools/action-log action/a000094 ./tools/tiny-action inputs/a000094.txt build/action/a000094.out
+build/action/a000095.out: inputs/a000095.txt recipes/action/a000095.json
+	./tools/action-log action/a000095 ./tools/tiny-action inputs/a000095.txt build/action/a000095.out
+build/action/a000096.out: inputs/a000096.txt recipes/action/a000096.json
+	./tools/action-log action/a000096 ./tools/tiny-action inputs/a000096.txt build/action/a000096.out
+build/action/a000097.out: inputs/a000097.txt recipes/action/a000097.json
+	./tools/action-log action/a000097 ./tools/tiny-action inputs/a000097.txt build/action/a000097.out
+build/action/a000098.out: inputs/a000098.txt recipes/action/a000098.json
+	./tools/action-log action/a000098 ./tools/tiny-action inputs/a000098.txt build/action/a000098.out
+build/action/a000099.out: inputs/a000099.txt recipes/action/a000099.json
+	./tools/action-log action/a000099 ./tools/tiny-action inputs/a000099.txt build/action/a000099.out
+-include 

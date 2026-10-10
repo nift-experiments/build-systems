@@ -16,3 +16,17 @@ Deletion behavior legitimately differs: Make/Ninja reject the missing source bef
 The common `scripts/measure.c` supervisor is copied unchanged from the existing shell benchmark convention: timing starts just before fork/exec and ends after wait4. CPU time includes reaped descendants; Linux peak RSS is the wait4 maximum-child scope, **not aggregate simultaneous memory**. It will be used for controlled smoke and official observations after correctness certification.
 
 Large-size runs, tiny-action certification, controlled worker checks, timing calibration and bounded diagnostics remain gates before provisioning. No cloud machine has been created and Nift core remains unchanged.
+
+## Final generator and measurement gate
+
+- `local-cp6-5000-light-j4`: all 45 records pass under the final light graph.
+- `local-cp8-tiny100-j4`, `local-cp8-tiny1000-j2`, `local-cp8-tiny10000-j4`: all 18 records each pass. Tiny graphs are independent actions, not a native-code proxy.
+- `local-cp10-final-heavy1000-j4`: all 45 records pass. The final heavy profile instantiates sixteen independent depth-128 templates per translation unit; earlier heavy profiles are diagnostic authoring runs only.
+- `local-cp12-final-light1000-j2`, `local-cp12-final-heavy100-j1`: all 45 records each pass.
+- `local-cp9b-rotated-smoke`: 216 observations pass their action/output oracles, but clean-rebuild pre-cleaned its output tree incorrectly. Retained as rejected boundary diagnostics, not official data.
+- `local-cp11-corrected-smoke`: 216 observations pass with cleanup inside timing, at workers 1/2/4 for native and tiny graphs.
+
+Official sampling is bounded rather than a complete Cartesian product: all native scenarios at 100/1,000 light, large 5,000/10,000 light no-op/leaf/full/global scaling, heavy 100/1,000 no-op/leaf/full/global at workers 1/2/4, and tiny 100/1,000/10,000. Worker comparisons explicitly use the same size/profile. No-op has 100 samples, ordinary increments 20, multi-second work 5–10, large builds 3; all warmups remain. Large-build spread must be disclosed rather than asserting confidence from three samples.
+
+- `local-cp7-10000-light-j4`: all 45 records pass, including every native mutation and input-failure scenario.
+- `local-cp13-final-harness-smoke`: all 54 rotated observations pass, including the final content-addressed definitions/oracles, mutation timestamp checks, and untimed targeted-build full followups. Workers 1/2/4 are explicitly checked.

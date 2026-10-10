@@ -1,0 +1,21 @@
+[1/21] ./tools/action-log obj/u000002 g++ -std=c++17 -O2 -g0 -fno-ident -MMD -MP -Iinputs/include -Ibuild/gen -MF build/obj/u000002.o.d -c inputs/src/u000002.cpp -o build/obj/u000002.o
+[2/21] ./tools/action-log obj/u000001 g++ -std=c++17 -O2 -g0 -fno-ident -MMD -MP -Iinputs/include -Ibuild/gen -MF build/obj/u000001.o.d -c inputs/src/u000001.cpp -o build/obj/u000001.o
+[3/21] ./tools/action-log obj/u000000 g++ -std=c++17 -O2 -g0 -fno-ident -MMD -MP -Iinputs/include -Ibuild/gen -MF build/obj/u000000.o.d -c inputs/src/u000000.cpp -o build/obj/u000000.o
+[4/21] ./tools/action-log obj/u000003 g++ -std=c++17 -O2 -g0 -fno-ident -MMD -MP -Iinputs/include -Ibuild/gen -MF build/obj/u000003.o.d -c inputs/src/u000003.cpp -o build/obj/u000003.o
+[5/21] ./tools/action-log obj/u000005 g++ -std=c++17 -O2 -g0 -fno-ident -MMD -MP -Iinputs/include -Ibuild/gen -MF build/obj/u000005.o.d -c inputs/src/u000005.cpp -o build/obj/u000005.o
+[6/21] ./tools/action-log obj/u000004 g++ -std=c++17 -O2 -g0 -fno-ident -MMD -MP -Iinputs/include -Ibuild/gen -MF build/obj/u000004.o.d -c inputs/src/u000004.cpp -o build/obj/u000004.o
+[7/21] ./tools/action-log obj/u000006 g++ -std=c++17 -O2 -g0 -fno-ident -MMD -MP -Iinputs/include -Ibuild/gen -MF build/obj/u000006.o.d -c inputs/src/u000006.cpp -o build/obj/u000006.o
+[8/21] ./tools/action-log obj/u000007 g++ -std=c++17 -O2 -g0 -fno-ident -MMD -MP -Iinputs/include -Ibuild/gen -MF build/obj/u000007.o.d -c inputs/src/u000007.cpp -o build/obj/u000007.o
+[9/21] ./tools/action-log obj/u000009 g++ -std=c++17 -O2 -g0 -fno-ident -MMD -MP -Iinputs/include -Ibuild/gen -MF build/obj/u000009.o.d -c inputs/src/u000009.cpp -o build/obj/u000009.o
+[10/21] ./tools/action-log obj/u000008 g++ -std=c++17 -O2 -g0 -fno-ident -MMD -MP -Iinputs/include -Ibuild/gen -MF build/obj/u000008.o.d -c inputs/src/u000008.cpp -o build/obj/u000008.o
+[11/21] ./tools/action-log lib/module01 ar rcsD build/lib/module01.a @response/module01.rsp
+[12/21] ./tools/action-log lib/module00 ar rcsD build/lib/module00.a @response/module00.rsp
+[13/21] ./tools/action-log lib/module03 ar rcsD build/lib/module03.a @response/module03.rsp
+[14/21] ./tools/action-log lib/module02 ar rcsD build/lib/module02.a @response/module02.rsp
+[15/21] ./tools/action-log lib/module04 ar rcsD build/lib/module04.a @response/module04.rsp
+[16/21] ./tools/action-log lib/module05 ar rcsD build/lib/module05.a @response/module05.rsp
+[17/21] ./tools/action-log lib/module07 ar rcsD build/lib/module07.a @response/module07.rsp
+[18/21] ./tools/action-log lib/module08 ar rcsD build/lib/module08.a @response/module08.rsp
+[19/21] ./tools/action-log lib/module06 ar rcsD build/lib/module06.a @response/module06.rsp
+[20/21] ./tools/action-log lib/module09 ar rcsD build/lib/module09.a @response/module09.rsp
+[21/21] ./tools/action-log bin/app g++ @response/link.rsp -o build/bin/app.exe

@@ -1,0 +1,447 @@
+diff --git a/HANDOVER.md b/HANDOVER.md
+index 200148d..5204786 100644
+--- a/HANDOVER.md
++++ b/HANDOVER.md
+@@ -20,20 +20,20 @@ whether it is a regression.
+ ## Current identity
+ 
+ - Product: **Nift**, a website generator and dependency-aware website build layer.
+-- Current executable identity: `Nift v4.10.0` (development), following the verified public v4.9.0 release.
++- Current executable identity: `Nift v4.11.0` (development), following the verified public v4.10.0 release.
+ - Language/toolchain: C++17 and Make.
+ - Output convention for modern projects: `public/`.
+ - Current branch: `main` in this checkout.
+-- Current project phase: **post-v4.9 release; v4.10 development**.
+-  The immutable v4.9.0 tag targets `aaadeb31219251b7cc02a62fbf75360ac3e11aaf`.
+-  Release workflow #37809541710 and all public installer lanes passed.
++- Current project phase: **post-v4.10 release; v4.11 development**.
++  The immutable v4.10.0 tag targets `76dbe2661fe7d221827db63959bf4a392bae2ba6`.
++  Release workflow #37987877884 and all public installer lanes passed.
+   Exactly five public assets and deployed website bytes were independently verified.
+-  Chocolatey 4.9.0 was submitted via #37812050345; its feed reports Submitted/Pending,
++  Chocolatey 4.10.0 was submitted via #37989307795; its feed reports Submitted/Pending,
+   not approved. Release verification is recorded in
+-  `docs/evidence/release-4.9.0/release-verification.md`.
+-  External contracts remain NRS `34b1c2ff4d1a3f591176f3ce79b74ad2958b6852`
+-  (93 modules) and PRS `1da43659da269c96af21aea7234799d2ad56b2df` (12 modules).
+-  The v4.9 performance campaign is CLOSED. The user separately authorized the
++  `docs/evidence/release-4.10.0/release-verification.md`.
++  External contracts remain NRS `a50c8dafbca81daf881a17d76dc195a84b9f3ca2`
++  (94 modules) and PRS `1da43659da269c96af21aea7234799d2ad56b2df` (12 modules).
++  The v4.10 performance campaign is CLOSED. The user separately authorized the
+   bounded v4.10 scripting competitiveness investigation; its accepted candidate
+   and review boundaries are in `docs/evidence/cp410-competitiveness/report.md`.
+   Frozen `20261009-v490` results and official workloads remain unchanged.
+diff --git a/README.md b/README.md
+index 58700c1..9b958d5 100644
+--- a/README.md
++++ b/README.md
+@@ -8,7 +8,7 @@ For documentation, examples and downloads, visit **[nift.dev](https://nift.dev)*
+ 
+ ## Project status
+ 
+-Nift has completed its planned Checkpoints 0–10 deliberate hardening campaign and the v4.2–v4.8 language, runtime, shell, packaging and embedding campaigns. The current development identity is `Nift v4.10.0`, following the verified public v4.9.0 performance and hardening release. The v4.9 performance campaign is closed; no new feature or performance implementation is authorized by this version transition. Existing regression, sanitizer, filesystem, parser, incremental, cross-platform, performance and packaging gates remain maintained; new hardening work should be driven by concrete findings or newly justified guarantees rather than arbitrary checkpoint numbers.
++Nift has completed its planned Checkpoints 0–10 deliberate hardening campaign and the v4.2–v4.8 language, runtime, shell, packaging and embedding campaigns. The current development identity is `Nift v4.11.0`, following the verified public v4.10.0 build-workflow and performance release. The v4.10 performance campaign is closed; no new feature or performance implementation is authorized by this version transition. Existing regression, sanitizer, filesystem, parser, incremental, cross-platform, performance and packaging gates remain maintained; new hardening work should be driven by concrete findings or newly justified guarantees rather than arbitrary checkpoint numbers.
+ 
+ ## Features
+ 
+diff --git a/ReleaseNotes.md b/ReleaseNotes.md
+index 9e8088c..41ae2cf 100644
+--- a/ReleaseNotes.md
++++ b/ReleaseNotes.md
+@@ -1,6 +1,11 @@
+ # Nift release notes
+ 
+-## v4.10.0 (unreleased development)
++## v4.11.0 (unreleased development)
++
++Development has advanced to v4.11.0 after the verified v4.10.0 release. No
++v4.11.0 user-visible changes have been recorded yet.
++
++## v4.10.0 (released 2026-10-10)
+ 
+ The accepted bounded performance campaign improves capture-heavy sort, traversal,
+ filesystem wrappers, large strings and FileValue ownership. Ordinary sort and tiny
+diff --git a/docs/evidence/release-4.10.0/release-note-audit.md b/docs/evidence/release-4.10.0/release-note-audit.md
+new file mode 100644
+index 0000000..d81ad7d
+--- /dev/null
++++ b/docs/evidence/release-4.10.0/release-note-audit.md
+@@ -0,0 +1,41 @@
++# v4.10.0 release-note accuracy audit
++
++Reviewed the complete Git delta from immutable **v4.9.0**
++(`1314a4b169ea2588df8bf63a3f342639ea7b5aa7`) through the release candidate.
++Preparation changes after the reviewed runtime are documentation/evidence only.
++
++Canonical workflow path is
++`docs/evidence/release-4.10.0/release-notes-4.10.0.md`, verified by the `rehearse`
++job of `.github/workflows/release.yml` (present and tracked). The reviewed notes
++are substantive release notes, not placeholder evidence.
++
++| User-facing statement | Source / history cross-check |
++|---|---|
++| Tracked-item `pre-build`/`build`/`post-build`/`depends` fields | `4bff682`; `src/Types.h` `ItemBuildPipeline`; `src/ProjectRead.cpp` parsing/validation; `docs/BUILD-SCRIPTS.md`. |
++| Dotted canonical sidecars; deprecated hyphenated pre/post fallback; ambiguity rejected | `src/ProjectRead.cpp` sidecar discovery; `tests/v410_build_pipeline.py`; black-box NRS `v410_build_pipeline_smoke.sh`. |
++| Custom `build` replaces render/minify and owns output; missing output fails | `src/ProjectInfo.cpp` phase ordering and bypass; `docs/BUILD-SCRIPTS.md`. |
++| Metadata committed only after post; failed phase stops item; branches continue | `src/ProjectInfo.cpp`; independent branch completion and descendant blocking. |
++| `depends` validation, cycle path, closure, clean-prerequisite validation | `src/ProjectRead.cpp`, `src/ProjectInfo.cpp`; `tests/v410_build_pipeline.py`. |
++| `depends` orders completion, does not invalidate; ordinary deps still needed | `build_reasons` excludes `depends`; documented relationship to `@dep`/`.deps.json`. |
++| Parallel ready-queue, no polling, no-dependency fast path | `src/ProjectInfo.cpp` condition-variable scheduler and atomic-index path. |
++| Hook environment variables and project-root resolution | `src/ProjectInfo.cpp` `build_environment`; `docs/BUILD-SCRIPTS.md` table. |
++| Additive existing-project rewrite/redesign | `4bff682`; `src/CLI.cpp` transformation init; `ReleaseNotes.md` v4.10 section. |
++| Capture/callback allocation reduction | `57d3cb1`, `561cfe8`; `Parser.cpp`/`Parser.h` shared captures and overlay frames. |
++| Object-member traversal reduction | `7dfd2eb`; `RuntimeValue::find_member` and hot-path rewires. |
++| Recursive glob/traversal sharing and linear replace | `391dac5`, `34dfe75`, `e3ef89d`; `ParserHelpers.*`, `ParserExpression.cpp`. |
++| Prepared filesystem operations | `615ffcd`; prepared stat/copy/move recipes. |
++| Large-string preparation | `e290b85`; bounded canonical large-string expressions. |
++| FileValue/save ownership reductions | `8ad6632`; prepared FileValue operations and shared clean saved buffers. |
++| Windows alias-cache correction | `3d8a8e9`; native alias resolution for build cache invalidation. |
++| Portable C++17 shared ownership | `2eaec7d`; `src/Types.h` replaces `shared_ptr::unique()`. |
++| No new official benchmark result; frozen series unchanged | `PERFORMANCE.md`; `docs/handover/ROADMAP.md`; official series not rerun. |
++| ABI 1.3 and no removed/deprecated syntax | `include/nift/c_abi.h`; `C ABI remains 1.3`; no removal in the delta. |
++| Deferred work (sort/capture/frame/instance, indexes, VM/JIT, multiple outputs, Make/Ninja comparison) | `docs/handover/V4.10-BUILD-PIPELINE.md` "Deferred" sections; `PERFORMANCE.md`. |
++
++Website reconciliation (release-version JSON-LD, additive transformation wording,
++published-not-current benchmark wording) was published and byte-verified live; no
++runtime claim changed.
++
++The cleanup-harness fix shipped in the independent regression suite
++(`nift-regression-suite`) is test-harness hygiene and is not a Nift runtime change;
++it is recorded as a **fixed non-runtime release-readiness issue**.
+diff --git a/docs/evidence/release-4.10.0/release-notes-4.10.0.md b/docs/evidence/release-4.10.0/release-notes-4.10.0.md
+new file mode 100644
+index 0000000..0a77fb7
+--- /dev/null
++++ b/docs/evidence/release-4.10.0/release-notes-4.10.0.md
+@@ -0,0 +1,125 @@
++# Nift v4.10.0
++
++Nift v4.10 is a build-workflow and performance release following v4.9.0. It adds
++tracked-item build pipelines, makes rewrite/redesign additive inside existing Nift
++projects, and retains a bounded set of runtime performance improvements. The C ABI
++remains **1.3**.
++
++## Tracked-item build pipelines
++
++Tracked items can now declare a per-item lifecycle in `.nift/tracked.json` using
++the optional `pre-build`, `build` and `post-build` script fields, plus a
++completion-order `depends` array.
++
++- Per-item scripts run `pre-build` → custom `build` or normal render → `post-build`.
++  A failed phase stops that item and its later phases; a post-build failure fails
++  the invocation. Successful metadata is committed only after post-build succeeds.
++  Independent dependency branches keep running.
++- A custom `build` script replaces normal template/content rendering and
++  minification. It owns the output bytes and must leave a regular file at the
++  tracked output path; a missing output fails. The content file still participates
++  in incremental tracking.
++- Canonical sidecars are discovered next to the content file by replacing the
++  content extension with the lifecycle suffix, for example
++  `content/about.pre-build.f`, `content/about.build.f` and
++  `content/about.post-build.f`, including nested paths. An explicit field wins
++  over discovery. Deprecated hyphenated pre/post sidecars remain a fallback; if
++  dotted and hyphenated sidecars both exist without an explicit choice, loading
++  fails with a diagnostic rather than executing either. Existing space-separated
++  keys and project-level `config.json` hooks keep their existing behavior.
++- Each phase runs in a fresh native script scope with invocation-local
++  environment values: `NIFT_HOOK_PHASE`, `NIFT_HOOK_MODE`, `NIFT_HOOK_TARGET`,
++  `NIFT_HOOK_CONTENT`, `NIFT_HOOK_OUTPUT`, `NIFT_HOOK_TEMPLATE` and
++  `NIFT_HOOK_ROOT`. Filesystem paths resolve against the project root; the
++  invoking process working directory and environment are unchanged.
++- `depends` is an optional array of exact tracked names. Missing names, self
++  edges, duplicates and cycles are rejected before a build, and cycle diagnostics
++  show the path. `nift build <name>` includes the prerequisite closure: stale
++  prerequisites build first and clean prerequisites are validated without
++  rebuilding. `build --all` builds the full graph. `depends` orders completion
++  and does not by itself invalidate a dependent when a prerequisite changes; add
++  the prerequisite output as an ordinary file dependency when its bytes affect
++  your output. Renaming a prerequisite updates references, removing one is
++  rejected while retained items depend on it, and a failed prerequisite blocks
++  its descendants with an explicit diagnostic.
++- Independent ready items execute concurrently with O(V+E) planning and no
++  polling. Projects without `depends` use the existing atomic-index worker path
++  with no dependency-graph allocations. Interrupted or partially written builds
++  are repaired with `build --repair`.
++
++The reference is `docs/BUILD-SCRIPTS.md`; the website documents the workflow at
++Build Scripts, General build systems and Asset pipelines.
++
++## Transformation workspaces: additive existing-project init
++
++`nift init --rewrite` and `nift init --redesign` now add missing transformation
++workspace files inside an existing Nift project. Existing configuration, tracking
++state, workbooks, guidance, README, AGENTS, HANDOVER and every other existing file
++are preserved byte-for-byte, including reruns and when another transformation mode
++already exists. Existing-project scaffolding always keeps existing files even when
++append/replace policy flags are supplied; fresh-project initialization keeps its
++existing policy rules. Rewrite and redesign remain experimental.
++
++## Runtime performance
++
++This release retains a bounded set of general runtime improvements; gains are
++workload-dependent and are not portable speed guarantees.
++
++- Callback and capture allocation reductions: shared exact lambda captures and
++  overlay callback frames, removal of discarded default capture slots, and
++  allocation-free native call-name probes.
++- Object-member traversal reduction: hot runtime paths avoid redundant object
++  member traversals.
++- Recursive glob and traversal: recursive glob scans and glob directory prefixes
++  are shared, glob sorting and relative-path overhead are reduced, and string
++  replacement builds its result linearly.
++- Prepared filesystem operations: canonical stat/copy/move recipes are shared
++  across repeated evaluations.
++- Large strings: bounded canonical large-string expressions are prepared instead
++  of rebuilt.
++- FileValue and save ownership: FileValue operations are prepared and clean saved
++  buffers are shared, reducing ownership churn.
++
++These changes were characterized by local paired profiling and retained scaling,
++allocation and lifetime guards. They are **not** new official cross-language
++benchmark results. The frozen official series remains unchanged and the official
++post-v4.9 benchmark campaign stays deferred.
++
++## Portability and correctness
++
++- Windows: native aliases are resolved for build cache invalidation so alias and
++  symlink targets invalidate correctly.
++- macOS/portable C++17: the shared-ownership check no longer relies on the removed
++  `std::shared_ptr::unique()` and uses a portable C++17-equivalent test.
++
++## Documentation
++
++New and updated documentation covers Build Scripts, General build systems, Asset
++pipelines and reconciled website wording (release-version, transformation-policy
++and benchmark framing). No command or language syntax is removed or deprecated by
++this delta, and no new major language feature is introduced. Public C headers and
++C ABI **1.3** are unchanged from v4.9.0.
++
++## Remaining costs and deferred work
++
++Sort factory/capture/frame/instance/retention architecture, persistent member
++indexing, RuntimeValue layout changes, canonical Jsonic++ work and VM/JIT remain
++deferred. Multiple declared outputs per item are not implemented. A comparative
++Nift/Make/Ninja benchmark was not run and no Make/Ninja performance or feature
++parity is claimed. None of these is a release blocker.
++
++## Certification and release boundary
++
++The retained runtime passes native, maintained and aggregate binding walls,
++GCC/Clang first-party and native-wrapper warning gates, sanitizers, exact-candidate
++independent NRS 94/94 and pinned PRS 12/12, deterministic performance guards, and
++Linux/macOS/Windows hosted certification. Release preparation repeats the
++authoritative local matrix and exact-SHA hosted readiness checks before the
++non-publishing artifact rehearsal.
++
++The canonical rehearsal stages four public archives: Linux x86_64, macOS ARM64,
++macOS x86_64 and Windows x86_64, plus a SHA256SUMS manifest. Installer preflight,
++live-installer byte equality, extracted-archive smokes and exact-set inspection
++remain release gates. These reviewed notes do not authorize a tag, publication or
++Chocolatey submission; explicit final release authorization is required after
++rehearsal and artifact inspection.
+diff --git a/docs/evidence/release-4.10.0/release-verification.md b/docs/evidence/release-4.10.0/release-verification.md
+new file mode 100644
+index 0000000..916b19b
+--- /dev/null
++++ b/docs/evidence/release-4.10.0/release-verification.md
+@@ -0,0 +1,87 @@
++# NIFT v4.10.0 — GITHUB RELEASE FINAL
++
++- Tag: **v4.10.0**, immutable annotated object `00acc981185ab3946a5a4f88e583ea17b5c5834f`.
++- Target: `76dbe2661fe7d221827db63959bf4a392bae2ba6`.
++- [Publishing workflow 37987877884](https://github.com/nift-dev/nift/actions/runs/37987877884): **PASS**, including all three public installer lanes and the `publish` job.
++- [GitHub release](https://github.com/nift-dev/nift/releases/tag/v4.10.0): **published**, draft **NO**, prerelease **NO**.
++- Release body equals committed canonical reviewed notes byte-for-byte; notes SHA-256
++  `003d7fffe8f9af1468dc1e5f6396046b3a9c4258f45c32e0a20ae6d7b6eac785`.
++- Release blockers: **NONE**. Version **4.10.0**, C ABI **1.3**.
++
++## Actual public assets
++
++Exactly **five** public assets: the four archives below and `SHA256SUMS`.
++All four unique manifest digests match actual downloaded public archives
++(`sha256sum -c SHA256SUMS` = OK for all four).
++
++| Archive | Architecture | SHA-256 |
++|---|---|---|
++| `nift-4.10.0-linux-x86_64.tar.gz` | x86_64 | `c4bf59a9a7c95cf8c4a1fea8f6dd176712e6f6fec2d574090407eac6958a74ef` |
++| `nift-4.10.0-macos-arm64.tar.gz` | arm64 | `36d93d1a4cb3d065bd345b1ae8a7c5a3cf1008a0814b6dd1c500de3225ec7d41` |
++| `nift-4.10.0-macos-x86_64.tar.gz` | x86_64 | `b433a03850d087503f2a1980d8a5023adb7e6b04b9ef872b0f1473accb143da9` |
++| `nift-4.10.0-windows-x86_64.zip` | x86_64 | `56e5a1d40edf70d7166b5bc8d3087257df189ea7cb4ef08281350c5dc3ac9bfa` |
++
++Archive inspection PASS for every published archive: exact platform root containing
++the executable (`nift`/`nift.exe`), `README.md` and `LICENSE` only. ELF x86_64,
++Mach-O arm64, Mach-O x86_64, PE x86_64; extracted executable reports
++`Nift v4.10.0`; README/LICENSE match the tagged source bytes (Windows modulo CRLF).
++No debug, evidence, certification or stale-v4.9 content shipped. Windows imports
++contain only Universal CRT and KERNEL32; no libgcc/libstdc++/libwinpthread/libffi
++runtime DLLs. The publishing workflow rebuilt from the immutable tag, so public
++archive hashes differ from the non-publishing rehearsal (timestamps/build metadata
++can differ); the actual public payload was independently checked against its
++emitted manifest, architecture, version, tagged source identity and extracted
++binary hash.
++
++## Public installer
++
++Verified canonical/live byte identity: `https://nift.dev/install` is byte-identical
++to `packaging/install.sh` (SHA-256
++`a98bdf72c2c5bd3aed0181f16e0361220b15cf02a2b96d183d98702be6d90708`). Isolated Linux
++x86_64 install from the live installer pinned to 4.10.0 installed the published
++archive; the installed binary (SHA-256
++`e7cb28d6150c797acbb52a618faff3cf981281b9ea4e91a8c478062242f0c3a2`) matches the
++published linux archive executable, reports `Nift v4.10.0`, and init/track/build/
++render/status passed in a temporary project. Public installer smokes PASS on macOS
++ARM64 (`macos-latest`) and macOS x86_64 (`macos-26-intel`) in the publishing
++workflow's `installer-public-smoke` jobs against the actual public URLs and
++checksums.
++
++## Website
++
++Release status **PASS**. Generated public main `d0f94c1850d9e27bf3bebc43d900f994ac6ae8bd`
++was published before authoritative stage `8174994`. Live homepage/install/
++build-scripts/build-systems/asset-pipelines all return HTTP 200 and carry the
++v4.10.0 release-status wording (homepage JSON-LD `softwareVersion` 4.10.0, latest
++release link, released v4.10 build-workflow pages). Source and generated
++repositories are clean and synchronized; the stage gitlink matches published main.
++
++## Chocolatey
++
++[Workflow 37989307795](https://github.com/nift-dev/nift/actions/runs/37989307795):
++**PASS**. The log confirms `nift.4.10.0.nupkg` was pushed successfully to
++`https://push.chocolatey.org/`. The nupkg was built from the actual published
++Windows archive checksum and the package reports version 4.10.0. **PASS**.
++Submitted for moderation; public approval/installability is not claimed.
++
++## Certification and boundary
++
++Canonical non-publishing rehearsal 37985929505 PASS. The candidate is
++source-equivalent to the ten-wall-certified runtime `2eaec7d`: the only diff is
++`docs/evidence/release-4.10.0/*` (release notes/audit), which no gated workflow
++watches. Final local native, maintained and aggregate binding, GCC/Clang + native
++wrapper warning, sanitizer/lifetime, NRS 94/94, PRS 12/12 and retained v4.10
++performance gates PASS. macOS Clang and Windows MinGW hosted first-party warning
++and cross-platform coverage PASS at the source-equivalent runtime; no MSVC gate
++exists or is claimed. The NRS clean-up harness fix (washer leak + temp-root
++clobber) shipped as a **fixed non-runtime release-readiness issue**. Frozen
++official benchmark series `20261009-v490` unchanged: not rerun, and no new
++cross-language result is claimed.
++
++No official post-v4.10 benchmark rerun, Labs update, provisioning, new feature or
++performance implementation occurred during publication. Snap and Homebrew were not
++published or certified in this task. Raw run/log, package, downloaded archive and
++local installer evidence is retained in ignored `.build/release-4.10.0/`. Canonical
++release notes remain immutable. The established next minor development version is
++4.11.0; its version transition is a separate local commit after this verified
++release.
+\ No newline at end of file
+diff --git a/docs/guarantees/registry.json b/docs/guarantees/registry.json
+index b6c7a35..0256504 100644
+--- a/docs/guarantees/registry.json
++++ b/docs/guarantees/registry.json
+@@ -1,9 +1,9 @@
+ {
+   "baseline": {
+-    "development_version": "4.10.0",
+-    "note": "BH1 is guarantee-durability infrastructure. Existing evidence remains valid unless falsified; UNPROVEN test-of-test status means guard liveness has not yet been demonstrated during this campaign. Baseline advanced for the v4.9.0 release (released 4.9.0 at aaadeb3; development now 4.10.0).",
+-    "release_commit": "aaadeb31219251b7cc02a62fbf75360ac3e11aaf",
+-    "released_version": "4.9.0"
++    "development_version": "4.11.0",
++    "note": "BH1 is guarantee-durability infrastructure. Existing evidence remains valid unless falsified; UNPROVEN test-of-test status means guard liveness has not yet been demonstrated during this campaign. Baseline advanced for the v4.10.0 release (released 4.10.0 at 76dbe26; development now 4.11.0).",
++    "release_commit": "76dbe2661fe7d221827db63959bf4a392bae2ba6",
++    "released_version": "4.10.0"
+   },
+   "campaign": "battle-hardening-2026-08",
+   "evidence_classes": [
+diff --git a/docs/handover/RELEASES.md b/docs/handover/RELEASES.md
+index df19939..421b047 100644
+--- a/docs/handover/RELEASES.md
++++ b/docs/handover/RELEASES.md
+@@ -7,20 +7,20 @@ approved release is packaged and published.
+ 
+ ## Authority and current state
+ 
+-The executable and Snap recipe declare `4.10.0` for development after the completed
+-v4.9.0 GitHub release. The immutable annotated `v4.9.0` tag targets
+-`aaadeb31219251b7cc02a62fbf75360ac3e11aaf`; tag object
+-`1314a4b169ea2588df8bf63a3f342639ea7b5aa7`. Release workflow #37809541710 passed,
++The executable and Snap recipe declare `4.11.0` for development after the completed
++v4.10.0 GitHub release. The immutable annotated `v4.10.0` tag targets
++`76dbe2661fe7d221827db63959bf4a392bae2ba6`; tag object
++`00acc981185ab3946a5a4f88e583ea17b5c5834f`. Release workflow #37987877884 passed,
+ including all three public installer lanes. Exactly five public assets and the
+-live website were independently verified. Chocolatey 4.9.0 was submitted through
+-#37812050345; its feed reports Submitted/Pending, not approved. Snap remains
++live website were independently verified. Chocolatey 4.10.0 was submitted through
++#37989307795; its feed reports Submitted/Pending, not approved. Snap remains
+ maintainer-managed; Homebrew downstream propagation was not checked in this task.
+ 
+-See `docs/evidence/release-4.9.0/release-verification.md` for final checksums and
++See `docs/evidence/release-4.10.0/release-verification.md` for final checksums and
+ evidence. Canonical reviewed notes remain unchanged at
+-`docs/evidence/release-4.9.0/release-notes-4.9.0.md`. External suites remain NRS
+-`34b1c2ff4d1a3f591176f3ce79b74ad2958b6852` (93 modules) and PRS
+-`1da43659da269c96af21aea7234799d2ad56b2df` (12 modules). The v4.9 performance
++`docs/evidence/release-4.10.0/release-notes-4.10.0.md`. External suites remain NRS
++`a50c8dafbca81daf881a17d76dc195a84b9f3ca2` (94 modules) and PRS
++`1da43659da269c96af21aea7234799d2ad56b2df` (12 modules). The v4.10 performance
+ campaign is closed. No new feature, optimization, official benchmark campaign,
+ Labs change or provisioning is authorized by this development transition.
+ Future tags and package publication require explicit authorization.
+diff --git a/snap/snapcraft.yaml b/snap/snapcraft.yaml
+index 1be73a2..f832005 100644
+--- a/snap/snapcraft.yaml
++++ b/snap/snapcraft.yaml
+@@ -1,6 +1,6 @@
+ name: nift
+ title: Nift
+-version: '4.10.0'
++version: '4.11.0'
+ summary: Fast dependency-aware website generator
+ description: |
+   Nift is a fast, lightweight and flexible website generator. It tracks
+diff --git a/src/CLI.cpp b/src/CLI.cpp
+index 3a2c5c7..f7a2bb9 100644
+--- a/src/CLI.cpp
++++ b/src/CLI.cpp
+@@ -76,7 +76,7 @@ void nift_setenv(const char* name, const char* value, int /*overwrite*/) {
+     ::setenv(name, value, 1);
+ #endif
+ }
+-constexpr const char* version_text = "Nift v4.10.0";
++constexpr const char* version_text = "Nift v4.11.0";
+ constexpr auto build_auto_poll_interval = std::chrono::milliseconds(200);
+ constexpr const char* build_auto_log_path = ".nift/build-auto.log";
+ 
+diff --git a/tests/version_consistency_test.py b/tests/version_consistency_test.py
+index 738511d..f3d0a48 100644
+--- a/tests/version_consistency_test.py
++++ b/tests/version_consistency_test.py
+@@ -34,9 +34,9 @@ class VersionConsistencyTest(unittest.TestCase):
+         vc = self.vc
+         exe = vc.executable_version()
+         snap = vc.snap_version()
+-        self.assertEqual(exe, "4.10.0")
+-        self.assertEqual(snap, "4.10.0")
+-        self.assertEqual(vc.check(expected="4.10.0", tag="v4.10.0"), 0)
++        self.assertEqual(exe, "4.11.0")
++        self.assertEqual(snap, "4.11.0")
++        self.assertEqual(vc.check(expected="4.11.0", tag="v4.11.0"), 0)
+ 
+     def test_exact_412_413_failure_rejected(self) -> None:
+         vc = self.vc
+@@ -148,11 +148,11 @@ class VersionConsistencyTest(unittest.TestCase):
+         # release.yml passes github.ref_name (e.g. v4.0.13) to the reusable
+         # Chocolatey/Homebrew workflows; the checker must accept both spellings.
+         vc = self.vc
+-        self.assertEqual(vc.check(expected="4.10.0"), 0)
+-        self.assertEqual(vc.check(expected="v4.10.0"), 0)
+-        self.assertEqual(vc.check(expected="v4.10.0", tag="v4.10.0"), 0)
++        self.assertEqual(vc.check(expected="4.11.0"), 0)
++        self.assertEqual(vc.check(expected="v4.11.0"), 0)
++        self.assertEqual(vc.check(expected="v4.11.0", tag="v4.11.0"), 0)
+         # The exact value release.yml supplies (github.ref_name for a tag).
+-        ref_name = "v4.10.0"
++        ref_name = "v4.11.0"
+         self.assertEqual(vc.check(expected=ref_name, tag=ref_name), 0)
+ 
+     def test_expected_rejects_malformed_prefixes(self) -> None:

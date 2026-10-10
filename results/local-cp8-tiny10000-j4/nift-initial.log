@@ -1,0 +1,6 @@
+rebuild causes:
+  ↳ generated output is missing → 10000 files
+  ↳ page build metadata is missing → 10000 files
+affected files: action/a000000, action/a000001, action/a000002, action/a000003, action/a000004  +9995 more
+📦 10000 files rebuilt successfully
+time taken: 10.774017 seconds

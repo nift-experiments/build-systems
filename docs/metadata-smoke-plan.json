@@ -1,0 +1,39 @@
+{
+  "kind": "metadata-rotation-smoke-not-official",
+  "graphs": [
+    {
+      "kind": "tiny",
+      "size": 100,
+      "jobs": 1,
+      "cases": [
+        {
+          "name": "noop",
+          "samples": 1,
+          "warmups": 1
+        },
+        {
+          "name": "full",
+          "samples": 1,
+          "warmups": 1
+        }
+      ]
+    },
+    {
+      "kind": "tiny",
+      "size": 100,
+      "jobs": 2,
+      "cases": [
+        {
+          "name": "noop",
+          "samples": 1,
+          "warmups": 1
+        },
+        {
+          "name": "full",
+          "samples": 1,
+          "warmups": 1
+        }
+      ]
+    }
+  ]
+}

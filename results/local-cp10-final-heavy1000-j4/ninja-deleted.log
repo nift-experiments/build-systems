@@ -1,0 +1,1 @@
+ninja: error: 'inputs/src/u000000.cpp', needed by 'build/obj/u000000.o', missing and no known rule to make it

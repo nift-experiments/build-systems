@@ -1,0 +1,32 @@
+{
+  "nift": {
+    "path": "/usr/local/bin/nift",
+    "sha256": "e6f0100771e79ae5b79ab9f00662482de254f35309a13147b5b9d242ad0508f6",
+    "version": "Nift v4.10.0"
+  },
+  "make": {
+    "path": "/usr/bin/make",
+    "sha256": "27c9f6d806aee15882b01c2c61848f7aa75caa14bc7b6f608ba422f9e46a7d49",
+    "version": "GNU Make 4.4.1"
+  },
+  "ninja": {
+    "path": "/tmp/build-systems-tools/ninja/usr/bin/ninja",
+    "sha256": "91e9548850cda2799facfdaa7abe33f9e978832f85e98212255708a7bbe437f2",
+    "version": "1.13.2"
+  },
+  "compiler": {
+    "path": "/usr/bin/g++",
+    "sha256": "e6718f7e0c7d057c3ff77b550c603da9bc4030e3ede3c053705acce1293dbe4d",
+    "version": "g++ (Ubuntu 15.2.0-16ubuntu1) 15.2.0"
+  },
+  "linker": {
+    "path": "/usr/bin/ld",
+    "sha256": "97f48d93b8b076a92d2809ec29dcb17f0f37c8827358f832255e2ed22fef6075",
+    "version": "GNU ld (GNU Binutils for Ubuntu) 2.46"
+  },
+  "archiver": {
+    "path": "/usr/bin/ar",
+    "sha256": "531473816bf553e863df5aab14c8177c72b732cf80c51dcf0fa990a50125041c",
+    "version": "GNU ar (GNU Binutils for Ubuntu) 2.46"
+  }
+}

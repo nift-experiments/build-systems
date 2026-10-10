@@ -1,0 +1,183 @@
+{
+  "suite_sha": "aff6bee5b203da3626cf0c26e180dc55e622fc7a",
+  "suite_dirty": true,
+  "cpus": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "plan": {
+    "kind": "local-smoke-not-official",
+    "graphs": [
+      {
+        "kind": "native",
+        "size": 100,
+        "profile": "light",
+        "jobs": 1,
+        "cases": [
+          {
+            "name": "noop",
+            "warmups": 1,
+            "samples": 2
+          },
+          {
+            "name": "leaf",
+            "warmups": 1,
+            "samples": 2
+          },
+          {
+            "name": "generated",
+            "warmups": 1,
+            "samples": 2
+          },
+          {
+            "name": "target",
+            "warmups": 1,
+            "samples": 2
+          },
+          {
+            "name": "clean-rebuild",
+            "warmups": 1,
+            "samples": 2
+          }
+        ]
+      },
+      {
+        "kind": "native",
+        "size": 100,
+        "profile": "light",
+        "jobs": 2,
+        "cases": [
+          {
+            "name": "noop",
+            "warmups": 1,
+            "samples": 2
+          },
+          {
+            "name": "leaf",
+            "warmups": 1,
+            "samples": 2
+          },
+          {
+            "name": "generated",
+            "warmups": 1,
+            "samples": 2
+          },
+          {
+            "name": "target",
+            "warmups": 1,
+            "samples": 2
+          },
+          {
+            "name": "clean-rebuild",
+            "warmups": 1,
+            "samples": 2
+          }
+        ]
+      },
+      {
+        "kind": "native",
+        "size": 100,
+        "profile": "light",
+        "jobs": 4,
+        "cases": [
+          {
+            "name": "noop",
+            "warmups": 1,
+            "samples": 2
+          },
+          {
+            "name": "leaf",
+            "warmups": 1,
+            "samples": 2
+          },
+          {
+            "name": "generated",
+            "warmups": 1,
+            "samples": 2
+          },
+          {
+            "name": "target",
+            "warmups": 1,
+            "samples": 2
+          },
+          {
+            "name": "clean-rebuild",
+            "warmups": 1,
+            "samples": 2
+          }
+        ]
+      },
+      {
+        "kind": "tiny",
+        "size": 100,
+        "jobs": 1,
+        "cases": [
+          {
+            "name": "noop",
+            "warmups": 1,
+            "samples": 2
+          },
+          {
+            "name": "leaf",
+            "warmups": 1,
+            "samples": 2
+          },
+          {
+            "name": "full",
+            "warmups": 1,
+            "samples": 2
+          }
+        ]
+      },
+      {
+        "kind": "tiny",
+        "size": 100,
+        "jobs": 2,
+        "cases": [
+          {
+            "name": "noop",
+            "warmups": 1,
+            "samples": 2
+          },
+          {
+            "name": "leaf",
+            "warmups": 1,
+            "samples": 2
+          },
+          {
+            "name": "full",
+            "warmups": 1,
+            "samples": 2
+          }
+        ]
+      },
+      {
+        "kind": "tiny",
+        "size": 100,
+        "jobs": 4,
+        "cases": [
+          {
+            "name": "noop",
+            "warmups": 1,
+            "samples": 2
+          },
+          {
+            "name": "leaf",
+            "warmups": 1,
+            "samples": 2
+          },
+          {
+            "name": "full",
+            "warmups": 1,
+            "samples": 2
+          }
+        ]
+      }
+    ]
+  },
+  "nift_binary_sha256": "e6f0100771e79ae5b79ab9f00662482de254f35309a13147b5b9d242ad0508f6",
+  "boundary": "C CLOCK_MONOTONIC before fork/exec through wait4; setup and correctness outside timing",
+  "peak_rss_scope": "Linux wait4 maximum-child high-water RSS; not summed concurrent memory"
+}

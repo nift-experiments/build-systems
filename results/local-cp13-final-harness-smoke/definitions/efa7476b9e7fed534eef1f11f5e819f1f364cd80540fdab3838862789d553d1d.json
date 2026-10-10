@@ -1,0 +1,12 @@
+{
+  "config": {
+    "build-threads": 1,
+    "content-dir": "recipes/",
+    "content-ext": ".json",
+    "default-template": "",
+    "incremental-mode": "modified",
+    "minify-exts": [],
+    "output-dir": "build/",
+    "output-ext": ".o"
+  }
+}

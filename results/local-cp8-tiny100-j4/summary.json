@@ -1,0 +1,15 @@
+{
+  "size": 100,
+  "profile": "light",
+  "jobs": 4,
+  "kind": "local-certification-not-official",
+  "all_passed": true,
+  "records": 18,
+  "scenario_names": [
+    "noop",
+    "leaf",
+    "batch10",
+    "batch10pct",
+    "full"
+  ]
+}

@@ -1,0 +1,16 @@
+rebuild causes:
+  ↳ dependency changed: build/lib/module00.a → 1 file
+  ↳ dependency changed: build/obj/u000000.o → 1 file
+  ↳ dependency changed: build/obj/u000010.o → 1 file
+  ↳ dependency changed: build/obj/u000020.o → 1 file
+  ↳ dependency changed: build/obj/u000030.o → 1 file
+  ↳ dependency changed: build/obj/u000040.o → 1 file
+  ↳ dependency changed: build/obj/u000050.o → 1 file
+  ↳ dependency changed: build/obj/u000060.o → 1 file
+  ↳ dependency changed: build/obj/u000070.o → 1 file
+  ↳ dependency changed: build/obj/u000080.o → 1 file
+  ↳ dependency changed: build/obj/u000090.o → 1 file
+  ↳ dependency changed: inputs/include/module00.h → 10 files
+affected files: obj/u000000, obj/u000010, obj/u000020, obj/u000030, obj/u000040  +7 more
+📦 12 files rebuilt successfully
+time taken: 0.591834 seconds

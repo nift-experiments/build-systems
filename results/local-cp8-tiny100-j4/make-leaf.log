@@ -1,0 +1,1 @@
+./tools/action-log action/a000000 ./tools/tiny-action inputs/a000000.txt build/action/a000000.out

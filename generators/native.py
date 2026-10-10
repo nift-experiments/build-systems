@@ -48,8 +48,8 @@ def generate(root,size,profile,jobs):
     for i in range(size):
         m=i%10;src=f'inputs/src/u{i:06}.cpp';private=f'inputs/include/private{i:06}.h'
         write(root,private,f'#pragma once\n#define PRIVATE_VALUE {i+1}\n')
-        heavy='\n'.join(f'template<int N> struct T{t} {{ static constexpr unsigned value=T{t}<N-1>::value+N; }}; template<> struct T{t}<0> {{static constexpr unsigned value=0;}};' for t in range(6)) if profile=='heavy' else ''
-        write(root,src,f'#include "private{i:06}.h"\n#include "module{m:02}.h"\n#include "config.h"\n{heavy}\n{''.join(f'static_assert(T{t}<64>::value==2080);' for t in range(6)) if profile=='heavy' else ''}\nint value_{i}(){{return PRIVATE_VALUE+MODULE_VALUE+GLOBAL_VALUE+GENERATED_VALUE;}}\n')
+        heavy='\n'.join(f'template<int N> struct T{t} {{ static constexpr unsigned value=T{t}<N-1>::value+N; }}; template<> struct T{t}<0> {{static constexpr unsigned value=0;}};' for t in range(16)) if profile=='heavy' else ''
+        write(root,src,f'#include "private{i:06}.h"\n#include "module{m:02}.h"\n#include "config.h"\n{heavy}\n{''.join(f'static_assert(T{t}<128>::value==8256);' for t in range(16)) if profile=='heavy' else ''}\nint value_{i}(){{return PRIVATE_VALUE+MODULE_VALUE+GLOBAL_VALUE+GENERATED_VALUE;}}\n')
         name=f'obj/u{i:06}';out=f'build/{name}.o'
         add(name,'.o',[src,private,f'inputs/include/module{m:02}.h','inputs/include/global.h','build/gen/config.h'],['gen/config'],flags+['-MF',out+'.d','-c',src,'-o',out]);modules[m].append(name)
     write(root,'inputs/src/main.cpp','#include <cstdio>\n'+''.join(f'int value_{i}();\n' for i in range(size))+'int generated_value();\nint main(){long long sum=generated_value();\n'+''.join(f'sum+=value_{i}();\n' for i in range(size))+'std::printf("%lld\\n",sum);}\n')

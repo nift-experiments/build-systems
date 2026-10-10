@@ -4,6 +4,7 @@ import argparse,hashlib,json,os,shutil,subprocess,sys,time
 from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'generators'))
 from native import generate
+from tiny import generate as generate_tiny
 ROOT=Path(__file__).resolve().parents[1]
 SCENARIOS=['noop','leaf','private','medium','global','generated','batch10','batch10pct','relink','target','full','unrelated','rename','deleted']
 
@@ -19,6 +20,15 @@ def closure(manifest,dirty):
         expected|=more
 def mutate(root,manifest,scenario):
     size=manifest['size'];dirty=[];delta=0;target=None
+    if manifest.get('kind')=='tiny-action-microbenchmark':
+        if scenario in ['leaf','batch10','batch10pct']:
+            count=1 if scenario=='leaf' else (10 if scenario=='batch10' else max(1,size//10))
+            for i in range(count):
+                p=root/f'inputs/a{i:06}.txt';p.write_text(p.read_text()+'changed\n');dirty.append(f'action/a{i:06}')
+        elif scenario=='full':
+            shutil.rmtree(root/'build');(root/'build/action').mkdir(parents=True);dirty=[a['id'] for a in manifest['actions']]
+        elif scenario!='noop':raise ValueError(scenario)
+        return sorted(dirty),0,None
     def replace(path,old,new):
         p=root/path;s=p.read_text();assert old in s;p.write_text(s.replace(old,new))
     if scenario in ['leaf','batch10','batch10pct','target']:
@@ -70,7 +80,14 @@ def run(root,system,jobs,scenario,expected,stdout,record_dir,target=None):
     failure_case=scenario=='deleted'
     action_ok=len(executed)==len(set(executed)) and sorted(executed)==expected
     output=None;hashes={}
-    if proc.returncode==0 and not target:
+    manifest=json.loads((root/'manifest.json').read_text())
+    if proc.returncode==0 and manifest.get('kind')=='tiny-action-microbenchmark':
+        for a in manifest['actions']:
+            h=1469598103934665603
+            for byte in (root/a['inputs'][0]).read_bytes():h=((h^byte)*1099511628211)&((1<<64)-1)
+            assert (root/a['output']).read_text()==f'{h:016x}\n',a['id']
+        output='tiny-outputs-verified'
+    elif proc.returncode==0 and not target:
         output=subprocess.check_output([str(root/'build/bin/app.exe')],cwd=root,text=True)
     if proc.returncode==0:
         for a in json.loads((root/'manifest.json').read_text())['actions']:
@@ -81,12 +98,12 @@ def run(root,system,jobs,scenario,expected,stdout,record_dir,target=None):
     record_dir.mkdir(parents=True,exist_ok=True);(record_dir/(system+'-'+scenario+'.json')).write_text(json.dumps(rec,indent=2)+'\n');(record_dir/(system+'-'+scenario+'.log')).write_text(proc.stdout+proc.stderr)
     if not ok:raise RuntimeError(f'Certification failed {system}/{scenario}; see {record_dir}')
     return rec
-def certify(size,profile,jobs,scenarios,result):
-    work=ROOT/'work'/f'certify-{size}-{profile}-j{jobs}';shutil.rmtree(work,ignore_errors=True);work.mkdir(parents=True)
-    canonical=work/'canonical';generate(canonical,size,profile,jobs);manifest=json.loads((canonical/'manifest.json').read_text());records=[];baseline_hashes=None
+def certify(size,profile,jobs,scenarios,result,kind='native'):
+    work=ROOT/'work'/f'certify-{kind}-{size}-{profile}-j{jobs}';shutil.rmtree(work,ignore_errors=True);work.mkdir(parents=True)
+    canonical=work/'canonical';(generate_tiny(canonical,size,jobs) if kind=='tiny' else generate(canonical,size,profile,jobs));manifest=json.loads((canonical/'manifest.json').read_text());records=[];baseline_hashes=None
     for system in ['make','ninja','nift']:
         baseline=work/(system+'-baseline');shutil.copytree(canonical,baseline)
-        rec=run(baseline,system,jobs,'initial',[a['id'] for a in manifest['actions']],manifest['expected_stdout'],result);records.append(rec)
+        rec=run(baseline,system,jobs,'initial',[a['id'] for a in manifest['actions']],manifest.get('expected_stdout','tiny-outputs-verified'),result);records.append(rec)
         rec['dependency_audit']=dependency_audit(baseline,system,manifest)
         (result/(system+'-initial.json')).write_text(json.dumps(rec,indent=2)+'\n')
         if baseline_hashes is None:baseline_hashes=rec['output_sha256']
@@ -94,7 +111,7 @@ def certify(size,profile,jobs,scenarios,result):
         for scenario in scenarios:
             fixture=work/(system+'-'+scenario);shutil.copytree(baseline,fixture)
             expected,delta,target=mutate(fixture,manifest,scenario)
-            stdout=str(int(manifest['expected_stdout'])+delta)+'\n'
+            stdout='tiny-outputs-verified' if kind=='tiny' else str(int(manifest['expected_stdout'])+delta)+'\n'
             records.append(run(fixture,system,jobs,scenario,expected,stdout,result,target))
             shutil.rmtree(fixture)
     for scenario in scenarios:
@@ -103,4 +120,4 @@ def certify(size,profile,jobs,scenarios,result):
     summary={'size':size,'profile':profile,'jobs':jobs,'kind':'local-certification-not-official','all_passed':True,'records':len(records),'scenario_names':scenarios}
     (result/'summary.json').write_text(json.dumps(summary,indent=2)+'\n');print(json.dumps(summary))
 if __name__=='__main__':
-    p=argparse.ArgumentParser();p.add_argument('--size',type=int,default=100);p.add_argument('--profile',choices=['light','heavy'],default='light');p.add_argument('--jobs',type=int,default=4);p.add_argument('--scenarios',nargs='+',default=SCENARIOS);p.add_argument('--results',type=Path,required=True);a=p.parse_args();certify(a.size,a.profile,a.jobs,a.scenarios,a.results)
+    p=argparse.ArgumentParser();p.add_argument('--kind',choices=['native','tiny'],default='native');p.add_argument('--size',type=int,default=100);p.add_argument('--profile',choices=['light','heavy'],default='light');p.add_argument('--jobs',type=int,default=4);p.add_argument('--scenarios',nargs='+',default=SCENARIOS);p.add_argument('--results',type=Path,required=True);a=p.parse_args();certify(a.size,a.profile,a.jobs,a.scenarios,a.results,a.kind)

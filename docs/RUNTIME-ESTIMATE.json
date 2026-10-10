@@ -1,0 +1,8 @@
+{
+  "method": "Conservative max-participant local authoring durations; heavy1000 extrapolated worker scaling. Not benchmark evidence.",
+  "timed_seconds_estimate": 9477,
+  "setup_installation_allowance_seconds": 1800,
+  "budget_hours": 3.13,
+  "linode_hourly_usd": 0.072,
+  "cost_estimate_usd": 0.23
+}

@@ -1,0 +1,19 @@
+{
+  "system": "nift",
+  "scenario": "deleted",
+  "command": [
+    "nift",
+    "build"
+  ],
+  "elapsed_ms": 236.156756,
+  "exit_code": 1,
+  "expected_actions": [],
+  "executed_actions": [
+    "obj/u000000"
+  ],
+  "action_ok": false,
+  "stdout_oracle": "516007\n",
+  "executable_stdout": null,
+  "output_sha256": {},
+  "passed": true
+}

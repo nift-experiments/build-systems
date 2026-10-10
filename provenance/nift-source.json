@@ -1,0 +1,11 @@
+{
+  "nift_source_sha": "635996b7ff5c725c81ac8ef57b1d146f7ceda642",
+  "public_ancestor_sha": "2eaec7d70e9ce2e698d0ba23a605fb9cf85317ff",
+  "source_tree_sha": "dc590bbb28b745d9005807af0d42f8e134860209",
+  "source_patch_sha256": "138c9d228f4d7682ef763c07f4b03190a9608460a730af75c5bce932c4ea88bf",
+  "reproduction": "Clone nift-dev/nift at public_ancestor_sha; git apply --binary nift-frozen.patch; git add -A; git write-tree must equal source_tree_sha. Build ordinary CLI with make.",
+  "source_version": "Nift v4.11.0 development snapshot",
+  "local_probe_version": "Nift v4.10.0",
+  "implementation_difference": "Between public release ancestor and frozen source, the only C++ difference is src/CLI.cpp version_text changing 4.10.0 to 4.11.0; other differences are release/version documentation and metadata. Official binary rebuilt from frozen tree.",
+  "patch_tree_reconstruction_verified": true
+}

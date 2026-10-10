@@ -1,0 +1,170 @@
+{
+  "kind": "local-smoke-not-official",
+  "graphs": [
+    {
+      "kind": "native",
+      "size": 100,
+      "profile": "light",
+      "jobs": 1,
+      "cases": [
+        {
+          "name": "noop",
+          "warmups": 1,
+          "samples": 2
+        },
+        {
+          "name": "leaf",
+          "warmups": 1,
+          "samples": 2
+        },
+        {
+          "name": "generated",
+          "warmups": 1,
+          "samples": 2
+        },
+        {
+          "name": "target",
+          "warmups": 1,
+          "samples": 2
+        },
+        {
+          "name": "clean-rebuild",
+          "warmups": 1,
+          "samples": 2
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "size": 100,
+      "profile": "light",
+      "jobs": 2,
+      "cases": [
+        {
+          "name": "noop",
+          "warmups": 1,
+          "samples": 2
+        },
+        {
+          "name": "leaf",
+          "warmups": 1,
+          "samples": 2
+        },
+        {
+          "name": "generated",
+          "warmups": 1,
+          "samples": 2
+        },
+        {
+          "name": "target",
+          "warmups": 1,
+          "samples": 2
+        },
+        {
+          "name": "clean-rebuild",
+          "warmups": 1,
+          "samples": 2
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "size": 100,
+      "profile": "light",
+      "jobs": 4,
+      "cases": [
+        {
+          "name": "noop",
+          "warmups": 1,
+          "samples": 2
+        },
+        {
+          "name": "leaf",
+          "warmups": 1,
+          "samples": 2
+        },
+        {
+          "name": "generated",
+          "warmups": 1,
+          "samples": 2
+        },
+        {
+          "name": "target",
+          "warmups": 1,
+          "samples": 2
+        },
+        {
+          "name": "clean-rebuild",
+          "warmups": 1,
+          "samples": 2
+        }
+      ]
+    },
+    {
+      "kind": "tiny",
+      "size": 100,
+      "jobs": 1,
+      "cases": [
+        {
+          "name": "noop",
+          "warmups": 1,
+          "samples": 2
+        },
+        {
+          "name": "leaf",
+          "warmups": 1,
+          "samples": 2
+        },
+        {
+          "name": "full",
+          "warmups": 1,
+          "samples": 2
+        }
+      ]
+    },
+    {
+      "kind": "tiny",
+      "size": 100,
+      "jobs": 2,
+      "cases": [
+        {
+          "name": "noop",
+          "warmups": 1,
+          "samples": 2
+        },
+        {
+          "name": "leaf",
+          "warmups": 1,
+          "samples": 2
+        },
+        {
+          "name": "full",
+          "warmups": 1,
+          "samples": 2
+        }
+      ]
+    },
+    {
+      "kind": "tiny",
+      "size": 100,
+      "jobs": 4,
+      "cases": [
+        {
+          "name": "noop",
+          "warmups": 1,
+          "samples": 2
+        },
+        {
+          "name": "leaf",
+          "warmups": 1,
+          "samples": 2
+        },
+        {
+          "name": "full",
+          "warmups": 1,
+          "samples": 2
+        }
+      ]
+    }
+  ]
+}

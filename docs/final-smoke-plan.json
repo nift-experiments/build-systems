@@ -1,0 +1,126 @@
+{
+  "kind": "final-local-smoke-not-official",
+  "graphs": [
+    {
+      "kind": "native",
+      "size": 100,
+      "profile": "light",
+      "jobs": 1,
+      "cases": [
+        {
+          "name": "noop",
+          "warmups": 0,
+          "samples": 1
+        },
+        {
+          "name": "leaf",
+          "warmups": 0,
+          "samples": 1
+        },
+        {
+          "name": "target",
+          "warmups": 0,
+          "samples": 1
+        },
+        {
+          "name": "full",
+          "warmups": 0,
+          "samples": 1
+        },
+        {
+          "name": "clean-rebuild",
+          "warmups": 0,
+          "samples": 1
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "size": 100,
+      "profile": "light",
+      "jobs": 2,
+      "cases": [
+        {
+          "name": "noop",
+          "warmups": 0,
+          "samples": 1
+        },
+        {
+          "name": "leaf",
+          "warmups": 0,
+          "samples": 1
+        },
+        {
+          "name": "target",
+          "warmups": 0,
+          "samples": 1
+        },
+        {
+          "name": "full",
+          "warmups": 0,
+          "samples": 1
+        },
+        {
+          "name": "clean-rebuild",
+          "warmups": 0,
+          "samples": 1
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "size": 100,
+      "profile": "light",
+      "jobs": 4,
+      "cases": [
+        {
+          "name": "noop",
+          "warmups": 0,
+          "samples": 1
+        },
+        {
+          "name": "leaf",
+          "warmups": 0,
+          "samples": 1
+        },
+        {
+          "name": "target",
+          "warmups": 0,
+          "samples": 1
+        },
+        {
+          "name": "full",
+          "warmups": 0,
+          "samples": 1
+        },
+        {
+          "name": "clean-rebuild",
+          "warmups": 0,
+          "samples": 1
+        }
+      ]
+    },
+    {
+      "kind": "tiny",
+      "size": 100,
+      "jobs": 4,
+      "cases": [
+        {
+          "name": "noop",
+          "warmups": 0,
+          "samples": 1
+        },
+        {
+          "name": "leaf",
+          "warmups": 0,
+          "samples": 1
+        },
+        {
+          "name": "full",
+          "warmups": 0,
+          "samples": 1
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+[1/10] ./tools/action-log action/a000002 ./tools/tiny-action inputs/a000002.txt build/action/a000002.out
+[2/10] ./tools/action-log action/a000001 ./tools/tiny-action inputs/a000001.txt build/action/a000001.out
+[3/10] ./tools/action-log action/a000003 ./tools/tiny-action inputs/a000003.txt build/action/a000003.out
+[4/10] ./tools/action-log action/a000004 ./tools/tiny-action inputs/a000004.txt build/action/a000004.out
+[5/10] ./tools/action-log action/a000000 ./tools/tiny-action inputs/a000000.txt build/action/a000000.out
+[6/10] ./tools/action-log action/a000005 ./tools/tiny-action inputs/a000005.txt build/action/a000005.out
+[7/10] ./tools/action-log action/a000006 ./tools/tiny-action inputs/a000006.txt build/action/a000006.out
+[8/10] ./tools/action-log action/a000007 ./tools/tiny-action inputs/a000007.txt build/action/a000007.out
+[9/10] ./tools/action-log action/a000008 ./tools/tiny-action inputs/a000008.txt build/action/a000008.out
+[10/10] ./tools/action-log action/a000009 ./tools/tiny-action inputs/a000009.txt build/action/a000009.out

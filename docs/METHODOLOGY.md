@@ -1,4 +1,4 @@
-# Fairness contract — draft before timings
+# Fairness contract
 
 ## Common work
 
@@ -25,3 +25,11 @@ Clean output trees are not cold machines. Filesystem caches remain uncontrolled 
 ## Gates and publication
 
 No cloud resources before all local correctness gates and duration estimates pass. No core modifications. Capability failures stop the campaign with reproducible evidence. Official evidence uses frozen source, suite and toolchain identities on one inexpensive node. Existing Labs report designs/data stay untouched. Balanced workload-specific conclusions, exact tables beside graphs, no aggregate fastest-system badge. Teardown follows live publication/evidence verification.
+
+## Bounded official matrix
+
+`docs/official-plan.json` is the exact predeclared plan. Every native workload is measured at 100/1,000 light; 5,000/10,000 retain no-op, leaf, full and global-header scaling. Heavy 100/1,000 provide full/leaf/no-op worker comparisons (100 also global-header). Tiny graphs use 100/1,000/10,000 independent actions. Worker study is 1/2/4 at fixed profiles/sizes, not a claimed full Cartesian product. Three-sample large full-build spread is shown explicitly; no p95/p99 is inferred there. Optional 25k/50k cases are omitted to bound runtime.
+
+## Frozen source provenance
+
+The local v4.10.0 probe binary is not asserted to have been compiled from the later source checkout. Official Nift is rebuilt from tree `dc590bbb28b745d9005807af0d42f8e134860209`, commit `635996b7ff5c725c81ac8ef57b1d146f7ceda642`, reporting v4.11.0 development. The commit is initially local; `provenance/nift-frozen.patch` against public `2eaec7d70e9ce2e698d0ba23a605fb9cf85317ff` reconstructs the exact tree (verified with `git write-tree`). No core files are edited. Tool binaries, versions, OS/kernel/CPU/memory/filesystem and source/build identity accompany the official observations.
