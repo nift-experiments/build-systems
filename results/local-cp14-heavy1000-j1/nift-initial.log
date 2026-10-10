@@ -1,0 +1,6 @@
+rebuild causes:
+  ↳ generated output is missing → 1015 files
+  ↳ page build metadata is missing → 1015 files
+affected files: gen/config, gen/generated, obj/u000000, obj/u000001, obj/u000002  +1010 more
+📦 1015 files rebuilt successfully
+time taken: 56.359791 seconds

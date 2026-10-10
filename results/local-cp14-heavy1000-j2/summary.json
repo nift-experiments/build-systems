@@ -1,0 +1,14 @@
+{
+  "size": 1000,
+  "profile": "heavy",
+  "jobs": 2,
+  "kind": "local-certification-not-official",
+  "all_passed": true,
+  "records": 15,
+  "scenario_names": [
+    "noop",
+    "leaf",
+    "full",
+    "global"
+  ]
+}

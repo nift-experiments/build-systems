@@ -30,3 +30,8 @@ Official sampling is bounded rather than a complete Cartesian product: all nativ
 
 - `local-cp7-10000-light-j4`: all 45 records pass, including every native mutation and input-failure scenario.
 - `local-cp13-final-harness-smoke`: all 54 rotated observations pass, including the final content-addressed definitions/oracles, mutation timestamp checks, and untimed targeted-build full followups. Workers 1/2/4 are explicitly checked.
+
+- `local-cp14-heavy1000-j1` and `local-cp14-heavy1000-j2`: all 15 records each pass for initial/no-op/leaf/full/global, completing fixed-size worker certification.
+- `local-cp15-metadata-rotation-smoke`: all 24 retained observations pass the final toolchain inventory, preconditions and graph-index scenario rotation.
+
+Local gate accepted before provisioning: native sizes 100/1,000/5,000/10,000, final light/heavy profiles, worker limits 1/2/4, tiny sizes 100/1,000/10,000, exact include/action/output oracles, targeted followup and clean/rebuild boundary. Source patch tree reconstruction is verified. Runtime estimate and bounded syscall handover are committed. Official measurements remain a separate same-node cohort.

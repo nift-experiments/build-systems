@@ -1,0 +1,410 @@
+{
+  "identity": {
+    "suite_sha": "aff6bee5b203da3626cf0c26e180dc55e622fc7a",
+    "suite_dirty": true,
+    "cpus": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "plan": {
+      "kind": "metadata-rotation-smoke-not-official",
+      "graphs": [
+        {
+          "kind": "tiny",
+          "size": 100,
+          "jobs": 1,
+          "cases": [
+            {
+              "name": "noop",
+              "samples": 1,
+              "warmups": 1
+            },
+            {
+              "name": "full",
+              "samples": 1,
+              "warmups": 1
+            }
+          ]
+        },
+        {
+          "kind": "tiny",
+          "size": 100,
+          "jobs": 2,
+          "cases": [
+            {
+              "name": "noop",
+              "samples": 1,
+              "warmups": 1
+            },
+            {
+              "name": "full",
+              "samples": 1,
+              "warmups": 1
+            }
+          ]
+        }
+      ]
+    },
+    "toolchain": {
+      "make": {
+        "version": "GNU Make 4.4.1",
+        "binary_sha256": "27c9f6d806aee15882b01c2c61848f7aa75caa14bc7b6f608ba422f9e46a7d49"
+      },
+      "ninja": {
+        "version": "1.13.2",
+        "binary_sha256": "91e9548850cda2799facfdaa7abe33f9e978832f85e98212255708a7bbe437f2"
+      },
+      "nift": {
+        "version": "Nift v4.10.0",
+        "binary_sha256": "e6f0100771e79ae5b79ab9f00662482de254f35309a13147b5b9d242ad0508f6"
+      },
+      "compiler": {
+        "version": "g++ (Ubuntu 15.2.0-16ubuntu1) 15.2.0",
+        "binary_sha256": "e6718f7e0c7d057c3ff77b550c603da9bc4030e3ede3c053705acce1293dbe4d"
+      },
+      "linker": {
+        "version": "GNU ld (GNU Binutils for Ubuntu) 2.46",
+        "binary_sha256": "97f48d93b8b076a92d2809ec29dcb17f0f37c8827358f832255e2ed22fef6075"
+      },
+      "archiver": {
+        "version": "GNU ar (GNU Binutils for Ubuntu) 2.46",
+        "binary_sha256": "531473816bf553e863df5aab14c8177c72b732cf80c51dcf0fa990a50125041c"
+      },
+      "python": {
+        "version": "Python 3.14.4",
+        "binary_sha256": "52e0a13e60a981d8c4b6478be2ba5176f69da07948a056bf49cf6f077e30cb41"
+      }
+    },
+    "nift_source_sha": null,
+    "machine": {
+      "kernel": "Linux 7.0.0-29-generic",
+      "architecture": "x86_64",
+      "cpu": "Architecture:                            x86_64\nCPU op-mode(s):                          32-bit, 64-bit\nAddress sizes:                           39 bits physical, 48 bits virtual\nByte Order:                              Little Endian\nCPU(s):                                  20\nOn-line CPU(s) list:                     0-19\nVendor ID:                               GenuineIntel\nModel name:                              12th Gen Intel(R) Core(TM) i7-12700H\nCPU family:                              6\nModel:                                   154\nThread(s) per core:                      2\nCore(s) per socket:                      14\nSocket(s):                               1\nStepping:                                3\nCPU(s) scaling MHz:                      58%\nCPU max MHz:                             4700.0000\nCPU min MHz:                             400.0000\nBogoMIPS:                                5376.00\nFlags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe syscall nx pdpe1gb rdtscp lm constant_tsc art arch_perfmon pebs bts rep_good nopl xtopology nonstop_tsc cpuid aperfmperf tsc_known_freq pni pclmulqdq dtes64 monitor ds_cpl vmx smx est tm2 ssse3 sdbg fma cx16 xtpr pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand lahf_lm abm 3dnowprefetch cpuid_fault epb ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid rdseed adx smap clflushopt clwb intel_pt sha_ni xsaveopt xsavec xgetbv1 xsaves split_lock_detect user_shstk avx_vnni dtherm ida arat pln pts hwp hwp_notify hwp_act_window hwp_epp hwp_pkg_req hfi vnmi umip pku ospke waitpkg gfni vaes vpclmulqdq rdpid movdiri movdir64b fsrm md_clear serialize arch_lbr ibt flush_l1d arch_capabilities\nVirtualization:                          VT-x\nL1d cache:                               544 KiB (14 instances)\nL1i cache:                               704 KiB (14 instances)\nL2 cache:                                11.5 MiB (8 instances)\nL3 cache:                                24 MiB (1 instance)\nNUMA node(s):                            1\nNUMA node0 CPU(s):                       0-19\nVulnerability Gather data sampling:      Not affected\nVulnerability Ghostwrite:                Not affected\nVulnerability Indirect target selection: Not affected\nVulnerability Itlb multihit:             Not affected\nVulnerability L1tf:                      Not affected\nVulnerability Mds:                       Not affected\nVulnerability Meltdown:                  Not affected\nVulnerability Mmio stale data:           Not affected\nVulnerability Old microcode:             Not affected\nVulnerability Reg file data sampling:    Mitigation; Clear Register File\nVulnerability Retbleed:                  Not affected\nVulnerability Spec rstack overflow:      Not affected\nVulnerability Spec store bypass:         Mitigation; Speculative Store Bypass disabled via prctl\nVulnerability Spectre v1:                Mitigation; usercopy/swapgs barriers and __user pointer sanitization\nVulnerability Spectre v2:                Mitigation; Enhanced / Automatic IBRS; IBPB conditional; PBRSB-eIBRS SW sequence; BHI BHI_DIS_S\nVulnerability Srbds:                     Not affected\nVulnerability Tsa:                       Not affected\nVulnerability Tsx async abort:           Not affected\nVulnerability Vmscape:                   Mitigation; IBPB before exit to userspace\n",
+      "os_release": "PRETTY_NAME=\"Ubuntu 26.04.1 LTS\"\nNAME=\"Ubuntu\"\nVERSION_ID=\"26.04\"\nVERSION=\"26.04.1 LTS (Resolute Raccoon)\"\nVERSION_CODENAME=resolute\nID=ubuntu\nID_LIKE=debian\nHOME_URL=\"https://www.ubuntu.com/\"\nSUPPORT_URL=\"https://help.ubuntu.com/\"\nBUG_REPORT_URL=\"https://bugs.launchpad.net/ubuntu/\"\nPRIVACY_POLICY_URL=\"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy\"\nUBUNTU_CODENAME=resolute\nLOGO=ubuntu-logo\n",
+      "memory": "MemTotal:       64088128 kB\nMemFree:         2734872 kB\nMemAvailable:   30115420 kB\nBuffers:         3193956 kB\nCached:         32341668 kB\nSwapCached:       187820 kB\nActive:         19353692 kB\nInactive:       36047432 kB\nActive(anon):   18062120 kB\nInactive(anon): 12784800 kB\nActive(file):    1291572 kB\nInactive(file): 23262632 kB\nUnevictable:      224816 kB\nMlocked:             216 kB\nSwapTotal:       8388604 kB\nSwapFree:         117128 kB\nZswap:                 0 kB\nZswapped:              0 kB\nDirty:             59296 kB\nWriteback:         22404 kB\nAnonPages:      19902400 kB\nMapped:          1413652 kB\nShmem:          10981816 kB\nKReclaimable:    3549064 kB\nSlab:            5060964 kB\nSReclaimable:    3549064 kB\nSUnreclaim:      1511900 kB\nKernelStack:       49232 kB\nPageTables:       288204 kB\nSecPageTables:     17324 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:    40432668 kB\nCommitted_AS:   92926716 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:      110276 kB\nVmallocChunk:          0 kB\nPercpu:            45520 kB\nHardwareCorrupted:     0 kB\nAnonHugePages:         0 kB\nShmemHugePages:  1034240 kB\nShmemPmdMapped:        0 kB\nFileHugePages:   1497088 kB\nFilePmdMapped:         0 kB\nCmaTotal:              0 kB\nCmaFree:               0 kB\nUnaccepted:            0 kB\nBalloon:               0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:      358848 kB\nDirectMap2M:    15978496 kB\nDirectMap1G:    50331648 kB\n",
+      "filesystem": "Filesystem     Type 1K-blocks      Used Available Use% Mounted on\n/dev/nvme0n1p2 ext4 478512880 354973996  99158316  79% /home/nick/Repositories/nift\n"
+    },
+    "nift_binary_sha256": "e6f0100771e79ae5b79ab9f00662482de254f35309a13147b5b9d242ad0508f6",
+    "boundary": "C CLOCK_MONOTONIC before fork/exec through wait4; setup and correctness outside timing",
+    "peak_rss_scope": "Linux wait4 maximum-child high-water RSS; not summed concurrent memory"
+  },
+  "cohorts": [
+    {
+      "kind": "tiny",
+      "size": 100,
+      "profile": "light",
+      "jobs": 1,
+      "scenario": "full",
+      "system": "make",
+      "samples": 1,
+      "warmups": 1,
+      "all_actions_correct": true,
+      "wall_ms": {
+        "median": 102.12366,
+        "min": 102.12366,
+        "max": 102.12366
+      },
+      "cpu_ms": {
+        "median": 103.138,
+        "min": 103.138,
+        "max": 103.138
+      },
+      "peak_rss_kib": {
+        "median": 2396,
+        "min": 2396,
+        "max": 2396
+      }
+    },
+    {
+      "kind": "tiny",
+      "size": 100,
+      "profile": "light",
+      "jobs": 1,
+      "scenario": "full",
+      "system": "nift",
+      "samples": 1,
+      "warmups": 1,
+      "all_actions_correct": true,
+      "wall_ms": {
+        "median": 231.295495,
+        "min": 231.295495,
+        "max": 231.295495
+      },
+      "cpu_ms": {
+        "median": 215.224,
+        "min": 215.224,
+        "max": 215.224
+      },
+      "peak_rss_kib": {
+        "median": 7756,
+        "min": 7756,
+        "max": 7756
+      }
+    },
+    {
+      "kind": "tiny",
+      "size": 100,
+      "profile": "light",
+      "jobs": 1,
+      "scenario": "full",
+      "system": "ninja",
+      "samples": 1,
+      "warmups": 1,
+      "all_actions_correct": true,
+      "wall_ms": {
+        "median": 161.551989,
+        "min": 161.551989,
+        "max": 161.551989
+      },
+      "cpu_ms": {
+        "median": 164.815,
+        "min": 164.815,
+        "max": 164.815
+      },
+      "peak_rss_kib": {
+        "median": 4868,
+        "min": 4868,
+        "max": 4868
+      }
+    },
+    {
+      "kind": "tiny",
+      "size": 100,
+      "profile": "light",
+      "jobs": 1,
+      "scenario": "noop",
+      "system": "make",
+      "samples": 1,
+      "warmups": 1,
+      "all_actions_correct": true,
+      "wall_ms": {
+        "median": 2.838344,
+        "min": 2.838344,
+        "max": 2.838344
+      },
+      "cpu_ms": {
+        "median": 2.719,
+        "min": 2.719,
+        "max": 2.719
+      },
+      "peak_rss_kib": {
+        "median": 2392,
+        "min": 2392,
+        "max": 2392
+      }
+    },
+    {
+      "kind": "tiny",
+      "size": 100,
+      "profile": "light",
+      "jobs": 1,
+      "scenario": "noop",
+      "system": "nift",
+      "samples": 1,
+      "warmups": 1,
+      "all_actions_correct": true,
+      "wall_ms": {
+        "median": 32.094112,
+        "min": 32.094112,
+        "max": 32.094112
+      },
+      "cpu_ms": {
+        "median": 20.373,
+        "min": 20.373,
+        "max": 20.373
+      },
+      "peak_rss_kib": {
+        "median": 6100,
+        "min": 6100,
+        "max": 6100
+      }
+    },
+    {
+      "kind": "tiny",
+      "size": 100,
+      "profile": "light",
+      "jobs": 1,
+      "scenario": "noop",
+      "system": "ninja",
+      "samples": 1,
+      "warmups": 1,
+      "all_actions_correct": true,
+      "wall_ms": {
+        "median": 3.911965,
+        "min": 3.911965,
+        "max": 3.911965
+      },
+      "cpu_ms": {
+        "median": 3.784,
+        "min": 3.784,
+        "max": 3.784
+      },
+      "peak_rss_kib": {
+        "median": 4868,
+        "min": 4868,
+        "max": 4868
+      }
+    },
+    {
+      "kind": "tiny",
+      "size": 100,
+      "profile": "light",
+      "jobs": 2,
+      "scenario": "full",
+      "system": "make",
+      "samples": 1,
+      "warmups": 1,
+      "all_actions_correct": true,
+      "wall_ms": {
+        "median": 56.750615,
+        "min": 56.750615,
+        "max": 56.750615
+      },
+      "cpu_ms": {
+        "median": 110.527,
+        "min": 110.527,
+        "max": 110.527
+      },
+      "peak_rss_kib": {
+        "median": 2268,
+        "min": 2268,
+        "max": 2268
+      }
+    },
+    {
+      "kind": "tiny",
+      "size": 100,
+      "profile": "light",
+      "jobs": 2,
+      "scenario": "full",
+      "system": "nift",
+      "samples": 1,
+      "warmups": 1,
+      "all_actions_correct": true,
+      "wall_ms": {
+        "median": 128.222932,
+        "min": 128.222932,
+        "max": 128.222932
+      },
+      "cpu_ms": {
+        "median": 227.173,
+        "min": 227.173,
+        "max": 227.173
+      },
+      "peak_rss_kib": {
+        "median": 7736,
+        "min": 7736,
+        "max": 7736
+      }
+    },
+    {
+      "kind": "tiny",
+      "size": 100,
+      "profile": "light",
+      "jobs": 2,
+      "scenario": "full",
+      "system": "ninja",
+      "samples": 1,
+      "warmups": 1,
+      "all_actions_correct": true,
+      "wall_ms": {
+        "median": 111.739359,
+        "min": 111.739359,
+        "max": 111.739359
+      },
+      "cpu_ms": {
+        "median": 209.3,
+        "min": 209.3,
+        "max": 209.3
+      },
+      "peak_rss_kib": {
+        "median": 5028,
+        "min": 5028,
+        "max": 5028
+      }
+    },
+    {
+      "kind": "tiny",
+      "size": 100,
+      "profile": "light",
+      "jobs": 2,
+      "scenario": "noop",
+      "system": "make",
+      "samples": 1,
+      "warmups": 1,
+      "all_actions_correct": true,
+      "wall_ms": {
+        "median": 2.959015,
+        "min": 2.959015,
+        "max": 2.959015
+      },
+      "cpu_ms": {
+        "median": 2.826,
+        "min": 2.826,
+        "max": 2.826
+      },
+      "peak_rss_kib": {
+        "median": 2396,
+        "min": 2396,
+        "max": 2396
+      }
+    },
+    {
+      "kind": "tiny",
+      "size": 100,
+      "profile": "light",
+      "jobs": 2,
+      "scenario": "noop",
+      "system": "nift",
+      "samples": 1,
+      "warmups": 1,
+      "all_actions_correct": true,
+      "wall_ms": {
+        "median": 118.491865,
+        "min": 118.491865,
+        "max": 118.491865
+      },
+      "cpu_ms": {
+        "median": 24.075,
+        "min": 24.075,
+        "max": 24.075
+      },
+      "peak_rss_kib": {
+        "median": 6196,
+        "min": 6196,
+        "max": 6196
+      }
+    },
+    {
+      "kind": "tiny",
+      "size": 100,
+      "profile": "light",
+      "jobs": 2,
+      "scenario": "noop",
+      "system": "ninja",
+      "samples": 1,
+      "warmups": 1,
+      "all_actions_correct": true,
+      "wall_ms": {
+        "median": 3.780134,
+        "min": 3.780134,
+        "max": 3.780134
+      },
+      "cpu_ms": {
+        "median": 3.666,
+        "min": 3.666,
+        "max": 3.666
+      },
+      "peak_rss_kib": {
+        "median": 4992,
+        "min": 4992,
+        "max": 4992
+      }
+    }
+  ],
+  "observations": 24,
+  "outliers_removed": 0,
+  "percentile_method": "linear interpolation at (n-1)*q; p95 for n>=20, p99 for n>=100"
+}
