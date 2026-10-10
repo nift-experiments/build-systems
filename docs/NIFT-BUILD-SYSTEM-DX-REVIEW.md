@@ -235,3 +235,101 @@ Finally, separate the benchmark runner's complexity from the product's complexit
 - [Canonical accepted evidence](https://github.com/nift-experiments/lab-evidence/tree/75c1588149a295702ec4006e25efc7ba4f05394f/benchmarks/build-systems/20261010-v4110-dev), unchanged by this commentary.
 - Nift source inspected read-only: frozen/current `src/CLI.cpp` and `docs/BUILD-SCRIPTS.md`. The latter's older unreleased-version label is not used to identify the measured executable.
 - [Ninja manual](https://ninja-build.org/manual.html): supplementary documented capabilities are distinguished above from exercised behavior; no verbatim excerpt is reproduced.
+
+## Follow-up: tracked graphs vs .build.f authoring
+
+This follow-up corrects the scope of the original authoring assessment. The campaign exercised a Python-generated tracked-item encoding. It did not establish that this encoding is Nift's minimum, natural or best authoring surface. The original assessment above remains as a record; the qualifications and revised choices below supersede its broad conclusions about ceremony and backend preference.
+
+This is qualitative reasoning from the frozen capability audit, adapter source and documented scripting/lifecycle contracts, with direct script dispatch checked in frozen `src/CLI.cpp` at `635996b7ff5c725c81ac8ef57b1d146f7ceda642`. It adds no measurements, prototype, independent agent trial or portability certification. Benchmark code, results, evidence and Nift core are unchanged.
+
+### Two authoring models, with different responsibilities
+
+**Model A: tracked declarative graph.** Tracked metadata identifies artifacts; `depends` orders completion; ordinary file dependencies determine invalidation; discovered or explicit lifecycle scripts implement actions. This is the model exercised by the campaign. It is useful when the build engine should own incremental checks, prerequisite scheduling and output lifecycle.
+
+**Model B: authored procedural scripts.** A project can instead organize logic in `build.f`, `tasks/test.f`, `tasks/package.f` and reusable functions, using tracked items only where incremental artifact ownership is useful. Existing direct path execution already supports `nift build.f`; no new command spelling is required. Per-artifact discovery such as `content/about.build.f`, `content/about.pre-build.f` and `content/about.post-build.f` supplies a different entry point with tracked-item context.
+
+A top-level script is a reasonable home for source discovery, argument construction, platform conditions, optional components, validation and related developer tasks. Per-artifact hooks are a reasonable home for producing or validating a particular output. Both can coexist. Moving logic into one script does **not** automatically give its subprocesses native tracked scheduling, incremental checks or failure propagation between artifact nodes: the script must either implement those responsibilities or delegate them to the tracked build. Fewer files alone are not evidence of an equivalent build engine.
+
+The benchmark's recipe JSON duplicated argv embedded in generated hooks. That duplication is an adapter choice, not a necessary Nift contract. Likewise, emitting a separate hook per action was not proof that reusable hooks or discovery conventions cannot work. Some metadata remains necessary when incremental ownership is wanted, including the current requirement for tracked content even for a custom output-producing hook. That requirement deserves evaluation on its own merits rather than being bundled with every file the adapter generated.
+
+### Useful explicitness versus redundant ceremony
+
+I withdraw “more ceremony” as an unconditional disadvantage. The relevant question is whether each declaration adds meaning and makes mistakes detectable.
+
+| Declaration | Distinct semantic role | What can currently be checked, and what remains uncertain |
+| --- | --- | --- |
+| Tracked item and output | Artifact identity, output path and ownership | A custom build must leave its tracked output as a regular file; this is not a proof that every possible ownership conflict is rejected |
+| `depends` | Prerequisite completion ordering | Unknown names, self edges, duplicate edges and cycles are rejected before building |
+| Ordinary file dependencies | Inputs whose changes make an artifact stale | Declared/discovered inputs participate in checks; arbitrary subprocess reads are not automatically inferred |
+| Build hook | How the artifact is produced | Hook failure stops that item's later phases and blocks dependent actions; successful output validation does not prove the declared input set is complete |
+| Pre/post hooks | Lifecycle phase and associated responsibilities | Phase sequencing and failure behavior have defined contracts |
+
+These are different facts. An agent can inspect an ordering field without parsing a command string to discover its intended role. A generator can rewrite an input list without editing a shell recipe. Structured records can support focused diffs and independent checks. That is a plausible safety advantage even when the canonical representation is longer.
+
+It is also a limited advantage today. Rejecting a cycle does not detect a missing input dependency. A compiler that reads an undeclared header can still produce an incorrectly considered-clean output. JSON structure is not a blanket guarantee of a typed, complete or contradictory-definition-free build contract. Broader ownership checks and consistency linting should be demonstrated before being credited as existing features.
+
+**Bad ceremony** is duplicated information without additional meaning, manually synchronized values, inconsistent boilerplate, or implementation-driven metadata with no useful contract. **Useful explicitness** is action identity, artifact ownership, declared inputs, completion dependencies, invalidation dependencies, lifecycle phase and output path. The design goal should be explicit semantics, with concise authoring helpers that produce or validate a canonical representation. Minimizing line count is secondary to minimizing ambiguity and synchronization hazards.
+
+### Keep ordering and invalidation distinct
+
+The split is conceptually sound. An action may need a prerequisite to finish without consuming its output bytes; an input file may affect freshness without being produced by another tracked action. Combining these concepts internally would lose that distinction.
+
+My earlier footgun criticism should therefore be read as an ergonomics and discoverability criticism. A higher-level “B consumes A's output” helper could derive both the completion edge and ordinary file dependency from one authored relationship. Separate order-only and file-only declarations should remain available. This reduces repeated authoring without pretending the two derived facts mean the same thing. It is a design suggestion, not an existing helper demonstrated by this campaign.
+
+### Nift can own authoring policy as well as execution
+
+An external Python generator is not intrinsically required. Nift's file-writing and subprocess facilities make a standalone script that prepares graph files before invoking a separate build a plausible architecture. However, this review did not certify a supported graph-construction API or an idiomatic end-to-end self-generation workflow. Producing JSON files is less convenient than a validated artifact/consumption API, and authors must correctly handle serialization, paths and regeneration inputs.
+
+In particular, editing tracking metadata from a running artifact hook must not be assumed to alter the already-loaded scheduler safely. Graph preparation should precede execution. Tracked hooks also have different constraints from standalone scripts, including restrictions on process-global cwd/environment changes. There is no basis here for claiming in-process dynamic graph mutation or treating the two contexts as interchangeable.
+
+This leaves a coherent potential product shape: procedural scripts express project policy; a tracked graph supplies incremental artifact contracts. Nift could own both. It could also generate or invoke Ninja where a specialized backend is useful, although that coexistence was not tested. There is no permanent architectural requirement for Python to sit between them.
+
+### Where the Make comparison changes
+
+I still prefer Make for a tiny conventional native build consisting of a few straightforward file rules. Familiarity and existing compiler dependency integration are practical benefits, not a universal reward for terseness.
+
+The crossover is when procedural policy becomes the substantial part of maintenance: source discovery, platform branches, optional components, code generation, packaging, tests and custom validation. At that point I would generally prefer ordinary `.f` control flow, shared functions and structured `cmd(...)` calls to increasingly interleaved Make expansion and shell recipes, subject to the APIs needed by the project being supported. That preference applies to agent edits as well as human edits. It is a qualitative judgment, not a measured productivity result.
+
+Project size alone does not locate this crossover. A medium project with boring native rules may benefit more from established native tooling; a small project with complicated packaging policy may benefit from Nift scripting immediately. Procedural authoring improves the policy layer without removing the need for reliable compiler input tracking.
+
+### Native integration gaps and target UX
+
+Compiler dependency ingestion is a serious **C/C++ integration gap**. For a medium or large project with changing transitive includes, manually maintaining include closure is not an acceptable default. It can be an adoption blocker there. It is not a fundamental objection to Nift as a general build/task system, nor does it invalidate the ordering/invalidation model.
+
+Depfile support could be a bounded native-tool integration, but a correct implementation needs escaping, path resolution, stale/missing inputs, generated headers and persistence semantics. It should not be described as merely reading a list after compilation. It would remove a major hesitation for ordinary C/C++, while multi-output ownership, target UX and toolchain integration would still matter.
+
+Both ensure and force operations are useful. Current named builds force the requested item while checking prerequisite closure; that behavior should remain available. I would add an explicitly documented ensure operation rather than silently change existing semantics. No syntax or implementation change is proposed here.
+
+Graph inspection is also an improvement area, not a complete absence of diagnostics: existing `status` and `build -p` already provide information. Rich graph queries and explanations, a CLI worker override and reusable authoring examples would improve the maintenance surface. Multi-output actions are an engine-model extension; depfiles and native project tooling are integration work. None of these gaps proves explicit tracking is the wrong abstraction.
+
+### Agent authoring and generated backends are separate questions
+
+For an agent modifying a bespoke workflow, I would usually prefer structured `.f` scripting to a complex Makefile with shell quoting and implicit expansion behavior. For an agent generating a large static graph, I would prefer a validated generator with a schema and invariant checks over unconstrained edits to either Ninja or tracked JSON. The extra records in a tracked representation could help automated review, provided those checks actually exist.
+
+Directly authored Ninja is a third case: a compact edge list can be appropriate, but Ninja is intentionally a generated execution backend, as its [manual](https://ninja-build.org/manual.html) explains. Comparing Nift's programming surface with Ninja's manifest is different from comparing Nift with the generator that owns project policy above Ninja.
+
+The original review leaned too heavily toward the benchmark's generated-backend setting. A generator plus Ninja remains attractive today for native work. Under equivalent supported semantics and operational reliability, however, an integrated Nift authoring/execution environment does not need an extra backend simply because Ninja is familiar.
+
+### Revised decision matrix and maturity counterfactual
+
+The counterfactual below assumes the requested package of improvements: no-op within roughly 20% of Ninja, compiler depfile ingestion, a consumption helper, ensure/force targeting, CLI worker override, graph query/explain tooling, reusable `.build.f` examples and multi-output actions. These are assumptions, not new findings. Performance parity alone would not imply correctness or operational maturity.
+
+| Situation | Present-day judgment | Under the stated mature-Nift counterfactual |
+| --- | --- | --- |
+| Tiny conventional native build | Make remains reasonable | Make remains reasonable; Nift if already the project runtime |
+| Moderately procedural build/tasks | Prefer Nift scripting when required APIs suffice | Prefer Nift over increasingly complex Make policy |
+| Medium changing C/C++ project | Native generator/Make with reliable include tracking; Nift needs integration work | Nift is a credible choice if native ecosystem requirements are modest |
+| Agent-maintained bespoke workflow | Prefer inspectable `.f` policy plus checked artifact contracts | Prefer Nift over complex Make or directly authored Ninja |
+| Huge generated graph with simple custom policy | Ninja is the conservative backend choice | No inherent requirement for Ninja if Nift's necessary semantics and reliability are comparable |
+| Conventional C++ needing established project integrations | Prefer an appropriate native generator, often targeting Ninja | Still favor that ecosystem when its integrations save substantial work |
+| Website, assets, native helpers and developer tasks sharing a Nift project | Nift is compelling where supported contracts suffice | Strong case for one runtime and project model |
+
+**Would I choose mature Nift over Make?** Often yes once project policy is substantially procedural or shared with other Nift tasks. Tiny conventional builds are not obliged to migrate.
+
+**Over hand-authored Ninja?** Usually yes for authored project logic. A short fixed manifest or existing stable generator can still make Ninja a sensible choice.
+
+**Over CMake/Meson → Ninja?** Sometimes. The remaining reasons to choose those systems are their project tooling and ecosystem, rather than an inherent need to separate generator and executor. For example, CMake documents [toolchain and capability handling](https://cmake.org/cmake/help/latest/manual/cmake-toolchains.7.html), while Meson documents [IDE introspection](https://mesonbuild.com/IDE-integration.html), [dependency facilities](https://mesonbuild.com/Manual.html) and [installation workflows](https://mesonbuild.com/Installing.html). Those capabilities are outside this counterfactual's build-engine improvements. If a project does not need them, and Nift covers its semantics, there is no remaining architectural reason in this review to insist on generator → Ninja. Existing integrations, migration cost and proven reliability still need project-specific assessment.
+
+A shared website/scripting/build/task runtime has real engineering value when it eliminates duplicated path policy, language boundaries and lifecycle coordination. It becomes feature accumulation when each subsystem retains separate conventions or when missing specialized capabilities require extensive replacement tooling. The tradeoff flips according to integration saved versus integration rebuilt.
+
+**Revised verdict:** retain the rich explicit model; remove duplicated/no-information authoring; provide helpers above precise canonical contracts. The benchmark established useful execution behavior and exposed current integration gaps. It did not establish that Nift's best authoring UX is the benchmark adapter, that agents benefit from terseness, or that a mature Nift must retain Ninja as its executor. Those parts of the original framing needed correction.
