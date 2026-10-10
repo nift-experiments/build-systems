@@ -1,0 +1,18 @@
+{
+  "all_passed": true,
+  "kind": "encoding-regression-not-official",
+  "graph_kind": "tiny",
+  "size": 1000,
+  "profile": "light",
+  "jobs": 2,
+  "records": 15,
+  "native_manifest_unchanged": true,
+  "canonical_input_bytes_unchanged": true,
+  "compiler_include_closures_match": true,
+  "scenarios": [
+    "noop",
+    "leaf",
+    "batch10",
+    "batch10pct"
+  ]
+}

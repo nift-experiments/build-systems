@@ -35,3 +35,13 @@ Official sampling is bounded rather than a complete Cartesian product: all nativ
 - `local-cp15-metadata-rotation-smoke`: all 24 retained observations pass the final toolchain inventory, preconditions and graph-index scenario rotation.
 
 Local gate accepted before provisioning: native sizes 100/1,000/5,000/10,000, final light/heavy profiles, worker limits 1/2/4, tiny sizes 100/1,000/10,000, exact include/action/output oracles, targeted followup and clean/rebuild boundary. Source patch tree reconstruction is verified. Runtime estimate and bounded syscall handover are committed. Official measurements remain a separate same-node cohort.
+
+## CP16 — native-input-only comparator encoding
+
+The first cloud run at suite `354899b` is rejected because it unnecessarily attached Nift content JSON markers to Make/Ninja edges. The corrected shared renderer keeps all real native inputs, commands and graph actions unchanged; representation metadata remains specific to each system.
+
+Fresh complete correctness: `local-cp16-corrected-encoding-native100` and `local-cp16-corrected-encoding-heavy100` pass 45 records each, including full/global/generated and all failure/migration cases; `local-cp16-corrected-encoding-tiny100` passes 18 records.
+
+Baseline-preserving encoding regression: native 1,000 light / j2, 5,000 and 10,000 light / j4, and 1,000 heavy / j4 each pass 30 records; tiny 1,000 / j2 and 10,000 / j4 each pass 15. The helper verifies identical action manifests and canonical input bytes, audits every object’s compiler include closure, requires zero actions after reencoding an already-built baseline, then replays sparse edits, native medium fan-out/targets/relinks/rename/deletion/unrelated inputs and tiny batch edits. Prior full/global/generated correctness remains applicable to unchanged native inputs; fresh 100-item matrices recheck those dirty paths. A helper initially looked for a newer workspace directory spelling; it now also recognizes the legacy ignored baseline path. No participant failure was involved.
+
+The independent read-only audit checks exact rotation order and recomputes distribution statistics using Python’s inclusive quantiles. It is a publication check, not part of any timed command.

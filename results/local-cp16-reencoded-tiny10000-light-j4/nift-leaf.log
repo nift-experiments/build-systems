@@ -1,0 +1,4 @@
+built action/a000000
+    ↳ dependency changed: inputs/a000000.txt
+📦 1 file rebuilt successfully
+time taken: 0.655176 seconds

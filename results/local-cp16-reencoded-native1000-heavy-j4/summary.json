@@ -1,0 +1,23 @@
+{
+  "all_passed": true,
+  "kind": "encoding-regression-not-official",
+  "graph_kind": "native",
+  "size": 1000,
+  "profile": "heavy",
+  "jobs": 4,
+  "records": 30,
+  "native_manifest_unchanged": true,
+  "canonical_input_bytes_unchanged": true,
+  "compiler_include_closures_match": true,
+  "scenarios": [
+    "noop",
+    "leaf",
+    "private",
+    "medium",
+    "target",
+    "relink",
+    "rename",
+    "deleted",
+    "unrelated"
+  ]
+}

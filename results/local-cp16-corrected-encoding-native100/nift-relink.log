@@ -1,0 +1,5 @@
+rebuild causes:
+  ↳ generated output is missing → 1 file
+affected files: bin/app
+📦 1 file rebuilt successfully
+time taken: 0.046551 seconds

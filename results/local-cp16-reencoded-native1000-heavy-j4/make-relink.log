@@ -1,0 +1,1 @@
+./tools/action-log bin/app g++ @response/link.rsp -o build/bin/app.exe

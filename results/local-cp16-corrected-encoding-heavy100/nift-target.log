@@ -1,0 +1,5 @@
+rebuild causes:
+  ↳ dependency changed: inputs/src/u000000.cpp → 1 file
+affected files: lib/module00, obj/u000000
+2 target/prerequisite items built; 10 prerequisites up to date; build succeeded
+time taken: 0.076998 seconds

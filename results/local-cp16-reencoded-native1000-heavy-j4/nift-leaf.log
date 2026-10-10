@@ -1,0 +1,7 @@
+rebuild causes:
+  ↳ dependency changed: build/lib/module00.a → 1 file
+  ↳ dependency changed: build/obj/u000000.o → 1 file
+  ↳ dependency changed: inputs/src/u000000.cpp → 1 file
+affected files: obj/u000000, lib/module00, bin/app
+📦 3 files rebuilt successfully
+time taken: 0.325024 seconds

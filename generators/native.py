@@ -12,7 +12,7 @@ def render(root,actions,jobs,default):
     ninja=['ninja_required_version = 1.10']
     tracked=[]
     for idx,a in enumerate(actions):
-        cmd=' '.join(['./tools/action-log',a['id'],*a['argv']]);deps=[*a['inputs'],a['recipe']]
+        cmd=' '.join(['./tools/action-log',a['id'],*a['argv']]);deps=a['inputs']
         make.extend([a['output']+': '+' '.join(deps),'\t'+cmd])
         rule=f'action{idx}';ninja.extend([f'rule {rule}',f'  command = {cmd}'])
         if a['output'].endswith('.o'):ninja.extend([f'  depfile = {a["output"]}.d','  deps = gcc'])

@@ -1,0 +1,3 @@
+./tools/action-log obj/u000000 g++ -std=c++17 -O2 -g0 -fno-ident -MMD -MP -Iinputs/include -Ibuild/gen -MF build/obj/u000000.o.d -c inputs/src/u000000.cpp -o build/obj/u000000.o
+./tools/action-log lib/module00 ar rcsD build/lib/module00.a @response/module00.rsp
+./tools/action-log bin/app g++ @response/link.rsp -o build/bin/app.exe
