@@ -1,0 +1,12 @@
+{
+  "all_passed": true,
+  "kind": "shared-rule-encoding-regression-not-official",
+  "graph_kind": "tiny",
+  "size": 10000,
+  "profile": "light",
+  "jobs": 4,
+  "records": 4,
+  "shared_rules": 2,
+  "native_manifest_unchanged": true,
+  "compiler_include_closures_match": true
+}

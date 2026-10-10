@@ -9,14 +9,13 @@ def write(root,path,text):
 def dump(root,path,data):write(root,path,json.dumps(data,sort_keys=True,indent=2)+'\n')
 def render(root,actions,jobs,default):
     make=['MAKEFLAGS += --no-builtin-rules --no-builtin-variables','.SUFFIXES:', '.DELETE_ON_ERROR:','.PHONY: all','all: '+default]
-    ninja=['ninja_required_version = 1.10']
+    ninja=['ninja_required_version = 1.10','rule compile','  command = $action_command','  depfile = $out.d','  deps = gcc','rule action','  command = $action_command']
     tracked=[]
     for idx,a in enumerate(actions):
         cmd=' '.join(['./tools/action-log',a['id'],*a['argv']]);deps=a['inputs']
         make.extend([a['output']+': '+' '.join(deps),'\t'+cmd])
-        rule=f'action{idx}';ninja.extend([f'rule {rule}',f'  command = {cmd}'])
-        if a['output'].endswith('.o'):ninja.extend([f'  depfile = {a["output"]}.d','  deps = gcc'])
-        ninja.append(f'build {a["output"]}: {rule} '+' '.join(deps))
+        rule='compile' if a['output'].endswith('.o') else 'action'
+        ninja.extend([f'build {a["output"]}: {rule} '+' '.join(deps),f'  action_command = {cmd}'])
         tracked.append({'name':a['id'],'title':a['id'],'content-ext':'.json','output-ext':Path(a['output']).suffix,'build':a['hook'],'depends':a['prerequisites']})
     make.append('-include '+' '.join(a['output']+'.d' for a in actions if a['output'].endswith('.o')))
     ninja.append('default '+default)
