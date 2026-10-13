@@ -1,0 +1,203 @@
+{
+  "candidate_sha": "7f7e487c47a87e871dfef53345e2b71288008bff",
+  "candidate_binary_sha256": "f13f0b5c99afa3c4afa320d33cad88f0819d3fad384dc3a6d51364d79206e11e",
+  "scope": "isolated local correctness; no official performance observations",
+  "compiler": "g++ (Ubuntu 15.2.0-16ubuntu1) 15.2.0",
+  "make": "4.4.1",
+  "ninja": "1.13.2",
+  "all_passed": true,
+  "records": 324,
+  "summaries": {
+    "build-tiny-light100-j4": {
+      "size": 100,
+      "profile": "light",
+      "jobs": 4,
+      "kind": "local-certification-not-official",
+      "all_passed": true,
+      "records": 18,
+      "scenario_names": [
+        "noop",
+        "leaf",
+        "batch10",
+        "batch10pct",
+        "full"
+      ]
+    },
+    "build-tiny-light100-j2": {
+      "size": 100,
+      "profile": "light",
+      "jobs": 2,
+      "kind": "local-certification-not-official",
+      "all_passed": true,
+      "records": 18,
+      "scenario_names": [
+        "noop",
+        "leaf",
+        "batch10",
+        "batch10pct",
+        "full"
+      ]
+    },
+    "build-tiny-light100-j1": {
+      "size": 100,
+      "profile": "light",
+      "jobs": 1,
+      "kind": "local-certification-not-official",
+      "all_passed": true,
+      "records": 18,
+      "scenario_names": [
+        "noop",
+        "leaf",
+        "batch10",
+        "batch10pct",
+        "full"
+      ]
+    },
+    "build-native-heavy100-j4": {
+      "size": 100,
+      "profile": "heavy",
+      "jobs": 4,
+      "kind": "local-certification-not-official",
+      "all_passed": true,
+      "records": 45,
+      "scenario_names": [
+        "noop",
+        "leaf",
+        "private",
+        "medium",
+        "global",
+        "generated",
+        "batch10",
+        "batch10pct",
+        "relink",
+        "target",
+        "full",
+        "unrelated",
+        "rename",
+        "deleted"
+      ]
+    },
+    "build-native-heavy100-j2": {
+      "size": 100,
+      "profile": "heavy",
+      "jobs": 2,
+      "kind": "local-certification-not-official",
+      "all_passed": true,
+      "records": 45,
+      "scenario_names": [
+        "noop",
+        "leaf",
+        "private",
+        "medium",
+        "global",
+        "generated",
+        "batch10",
+        "batch10pct",
+        "relink",
+        "target",
+        "full",
+        "unrelated",
+        "rename",
+        "deleted"
+      ]
+    },
+    "build-native-heavy100-j1": {
+      "size": 100,
+      "profile": "heavy",
+      "jobs": 1,
+      "kind": "local-certification-not-official",
+      "all_passed": true,
+      "records": 45,
+      "scenario_names": [
+        "noop",
+        "leaf",
+        "private",
+        "medium",
+        "global",
+        "generated",
+        "batch10",
+        "batch10pct",
+        "relink",
+        "target",
+        "full",
+        "unrelated",
+        "rename",
+        "deleted"
+      ]
+    },
+    "build-native-light100-j2": {
+      "size": 100,
+      "profile": "light",
+      "jobs": 2,
+      "kind": "local-certification-not-official",
+      "all_passed": true,
+      "records": 45,
+      "scenario_names": [
+        "noop",
+        "leaf",
+        "private",
+        "medium",
+        "global",
+        "generated",
+        "batch10",
+        "batch10pct",
+        "relink",
+        "target",
+        "full",
+        "unrelated",
+        "rename",
+        "deleted"
+      ]
+    },
+    "build-native-light100-j1": {
+      "size": 100,
+      "profile": "light",
+      "jobs": 1,
+      "kind": "local-certification-not-official",
+      "all_passed": true,
+      "records": 45,
+      "scenario_names": [
+        "noop",
+        "leaf",
+        "private",
+        "medium",
+        "global",
+        "generated",
+        "batch10",
+        "batch10pct",
+        "relink",
+        "target",
+        "full",
+        "unrelated",
+        "rename",
+        "deleted"
+      ]
+    },
+    "build-light100-j4": {
+      "size": 100,
+      "profile": "light",
+      "jobs": 4,
+      "kind": "local-certification-not-official",
+      "all_passed": true,
+      "records": 45,
+      "scenario_names": [
+        "noop",
+        "leaf",
+        "private",
+        "medium",
+        "global",
+        "generated",
+        "batch10",
+        "batch10pct",
+        "relink",
+        "target",
+        "full",
+        "unrelated",
+        "rename",
+        "deleted"
+      ]
+    }
+  },
+  "raw_receipts_directory": "/tmp/graph-refresh-cert-7f7e487/receipts",
+  "commands": "NIFT=/tmp/nift-refresh-candidate-7f7e487/nift NINJA=/tmp/refresh-ninja-1.13.2/ninja python3 scripts/certify.py --kind native|tiny --size100 --profile light|heavy --jobs1|2|4; tiny scenarios noop leaf batch10 batch10pct full"
+}

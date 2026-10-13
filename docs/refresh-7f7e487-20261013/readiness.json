@@ -1,0 +1,14 @@
+{
+  "candidate_sha": "7f7e487c47a87e871dfef53345e2b71288008bff",
+  "branch": "main",
+  "series": "20261013-candidate-7f7e487",
+  "plan_sha256": "b344f8e2f53db888be52c7e03d940054906ed5c022c63e1f5fdca8b6fea18bbb",
+  "runner_cells": 291,
+  "measured": 8880,
+  "warmups": 468,
+  "observations": 9348,
+  "baseline_suite_sha": "b0fcbfe830e9766d18591f40049bd2d0d7d99201",
+  "refresh_suite_sha": "freeze after additive refresh changes are committed",
+  "correctness_gate": "isolated local 324 action/output/failure/include-closure records passed across light/heavy native and tiny j1/j2/j4",
+  "comparator_policy": "retain previous exact participant versions; record actual host compiler/packages and disclose cross-node trends"
+}

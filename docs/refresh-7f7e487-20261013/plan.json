@@ -1,0 +1,622 @@
+{
+  "kind": "official-same-node",
+  "scope": "Complete native scenario matrix at 100/1000 light; large light scaling at 5000/10000; heavy compiler/worker study at 100/1000; tiny independent-action study. Not a full size/profile/worker Cartesian product.",
+  "graphs": [
+    {
+      "kind": "native",
+      "size": 100,
+      "profile": "light",
+      "jobs": 4,
+      "cases": [
+        {
+          "name": "full",
+          "samples": 10,
+          "warmups": 1
+        },
+        {
+          "name": "noop",
+          "samples": 100,
+          "warmups": 2
+        },
+        {
+          "name": "leaf",
+          "samples": 20,
+          "warmups": 2
+        },
+        {
+          "name": "private",
+          "samples": 20,
+          "warmups": 2
+        },
+        {
+          "name": "medium",
+          "samples": 20,
+          "warmups": 2
+        },
+        {
+          "name": "global",
+          "samples": 10,
+          "warmups": 1
+        },
+        {
+          "name": "generated",
+          "samples": 10,
+          "warmups": 1
+        },
+        {
+          "name": "batch10",
+          "samples": 20,
+          "warmups": 2
+        },
+        {
+          "name": "batch10pct",
+          "samples": 20,
+          "warmups": 2
+        },
+        {
+          "name": "target",
+          "samples": 20,
+          "warmups": 2
+        },
+        {
+          "name": "relink",
+          "samples": 20,
+          "warmups": 2
+        },
+        {
+          "name": "clean-rebuild",
+          "samples": 10,
+          "warmups": 1
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "size": 1000,
+      "profile": "light",
+      "jobs": 4,
+      "cases": [
+        {
+          "name": "full",
+          "samples": 5,
+          "warmups": 1
+        },
+        {
+          "name": "noop",
+          "samples": 100,
+          "warmups": 2
+        },
+        {
+          "name": "leaf",
+          "samples": 20,
+          "warmups": 2
+        },
+        {
+          "name": "private",
+          "samples": 20,
+          "warmups": 2
+        },
+        {
+          "name": "medium",
+          "samples": 5,
+          "warmups": 1
+        },
+        {
+          "name": "global",
+          "samples": 5,
+          "warmups": 1
+        },
+        {
+          "name": "generated",
+          "samples": 5,
+          "warmups": 1
+        },
+        {
+          "name": "batch10",
+          "samples": 5,
+          "warmups": 1
+        },
+        {
+          "name": "batch10pct",
+          "samples": 5,
+          "warmups": 1
+        },
+        {
+          "name": "target",
+          "samples": 20,
+          "warmups": 2
+        },
+        {
+          "name": "relink",
+          "samples": 20,
+          "warmups": 2
+        },
+        {
+          "name": "clean-rebuild",
+          "samples": 5,
+          "warmups": 1
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "size": 5000,
+      "profile": "light",
+      "jobs": 4,
+      "cases": [
+        {
+          "name": "noop",
+          "samples": 100,
+          "warmups": 2
+        },
+        {
+          "name": "leaf",
+          "samples": 20,
+          "warmups": 2
+        },
+        {
+          "name": "full",
+          "samples": 3,
+          "warmups": 1
+        },
+        {
+          "name": "global",
+          "samples": 3,
+          "warmups": 1
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "size": 10000,
+      "profile": "light",
+      "jobs": 4,
+      "cases": [
+        {
+          "name": "noop",
+          "samples": 100,
+          "warmups": 2
+        },
+        {
+          "name": "leaf",
+          "samples": 20,
+          "warmups": 2
+        },
+        {
+          "name": "full",
+          "samples": 3,
+          "warmups": 1
+        },
+        {
+          "name": "global",
+          "samples": 3,
+          "warmups": 1
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "size": 100,
+      "profile": "light",
+      "jobs": 1,
+      "cases": [
+        {
+          "name": "full",
+          "samples": 10,
+          "warmups": 1
+        },
+        {
+          "name": "noop",
+          "samples": 100,
+          "warmups": 2
+        },
+        {
+          "name": "leaf",
+          "samples": 20,
+          "warmups": 2
+        },
+        {
+          "name": "private",
+          "samples": 20,
+          "warmups": 2
+        },
+        {
+          "name": "medium",
+          "samples": 20,
+          "warmups": 2
+        },
+        {
+          "name": "global",
+          "samples": 10,
+          "warmups": 1
+        },
+        {
+          "name": "generated",
+          "samples": 10,
+          "warmups": 1
+        },
+        {
+          "name": "batch10",
+          "samples": 20,
+          "warmups": 2
+        },
+        {
+          "name": "batch10pct",
+          "samples": 20,
+          "warmups": 2
+        },
+        {
+          "name": "target",
+          "samples": 20,
+          "warmups": 2
+        },
+        {
+          "name": "relink",
+          "samples": 20,
+          "warmups": 2
+        },
+        {
+          "name": "clean-rebuild",
+          "samples": 10,
+          "warmups": 1
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "size": 100,
+      "profile": "light",
+      "jobs": 2,
+      "cases": [
+        {
+          "name": "full",
+          "samples": 10,
+          "warmups": 1
+        },
+        {
+          "name": "noop",
+          "samples": 100,
+          "warmups": 2
+        },
+        {
+          "name": "leaf",
+          "samples": 20,
+          "warmups": 2
+        },
+        {
+          "name": "private",
+          "samples": 20,
+          "warmups": 2
+        },
+        {
+          "name": "medium",
+          "samples": 20,
+          "warmups": 2
+        },
+        {
+          "name": "global",
+          "samples": 10,
+          "warmups": 1
+        },
+        {
+          "name": "generated",
+          "samples": 10,
+          "warmups": 1
+        },
+        {
+          "name": "batch10",
+          "samples": 20,
+          "warmups": 2
+        },
+        {
+          "name": "batch10pct",
+          "samples": 20,
+          "warmups": 2
+        },
+        {
+          "name": "target",
+          "samples": 20,
+          "warmups": 2
+        },
+        {
+          "name": "relink",
+          "samples": 20,
+          "warmups": 2
+        },
+        {
+          "name": "clean-rebuild",
+          "samples": 10,
+          "warmups": 1
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "size": 100,
+      "profile": "heavy",
+      "jobs": 1,
+      "cases": [
+        {
+          "name": "noop",
+          "samples": 100,
+          "warmups": 2
+        },
+        {
+          "name": "leaf",
+          "samples": 20,
+          "warmups": 2
+        },
+        {
+          "name": "full",
+          "samples": 10,
+          "warmups": 1
+        },
+        {
+          "name": "global",
+          "samples": 10,
+          "warmups": 1
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "size": 100,
+      "profile": "heavy",
+      "jobs": 2,
+      "cases": [
+        {
+          "name": "noop",
+          "samples": 100,
+          "warmups": 2
+        },
+        {
+          "name": "leaf",
+          "samples": 20,
+          "warmups": 2
+        },
+        {
+          "name": "full",
+          "samples": 10,
+          "warmups": 1
+        },
+        {
+          "name": "global",
+          "samples": 10,
+          "warmups": 1
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "size": 100,
+      "profile": "heavy",
+      "jobs": 4,
+      "cases": [
+        {
+          "name": "noop",
+          "samples": 100,
+          "warmups": 2
+        },
+        {
+          "name": "leaf",
+          "samples": 20,
+          "warmups": 2
+        },
+        {
+          "name": "full",
+          "samples": 10,
+          "warmups": 1
+        },
+        {
+          "name": "global",
+          "samples": 10,
+          "warmups": 1
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "size": 1000,
+      "profile": "heavy",
+      "jobs": 1,
+      "cases": [
+        {
+          "name": "noop",
+          "samples": 100,
+          "warmups": 2
+        },
+        {
+          "name": "leaf",
+          "samples": 20,
+          "warmups": 2
+        },
+        {
+          "name": "full",
+          "samples": 3,
+          "warmups": 1
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "size": 1000,
+      "profile": "heavy",
+      "jobs": 2,
+      "cases": [
+        {
+          "name": "noop",
+          "samples": 100,
+          "warmups": 2
+        },
+        {
+          "name": "leaf",
+          "samples": 20,
+          "warmups": 2
+        },
+        {
+          "name": "full",
+          "samples": 5,
+          "warmups": 1
+        }
+      ]
+    },
+    {
+      "kind": "native",
+      "size": 1000,
+      "profile": "heavy",
+      "jobs": 4,
+      "cases": [
+        {
+          "name": "noop",
+          "samples": 100,
+          "warmups": 2
+        },
+        {
+          "name": "leaf",
+          "samples": 20,
+          "warmups": 2
+        },
+        {
+          "name": "full",
+          "samples": 5,
+          "warmups": 1
+        }
+      ]
+    },
+    {
+      "kind": "tiny",
+      "size": 100,
+      "jobs": 1,
+      "cases": [
+        {
+          "name": "noop",
+          "samples": 100,
+          "warmups": 2
+        },
+        {
+          "name": "leaf",
+          "samples": 50,
+          "warmups": 2
+        },
+        {
+          "name": "full",
+          "samples": 5,
+          "warmups": 1
+        },
+        {
+          "name": "batch10",
+          "samples": 20,
+          "warmups": 2
+        }
+      ]
+    },
+    {
+      "kind": "tiny",
+      "size": 100,
+      "jobs": 2,
+      "cases": [
+        {
+          "name": "noop",
+          "samples": 100,
+          "warmups": 2
+        },
+        {
+          "name": "leaf",
+          "samples": 50,
+          "warmups": 2
+        },
+        {
+          "name": "full",
+          "samples": 5,
+          "warmups": 1
+        },
+        {
+          "name": "batch10",
+          "samples": 20,
+          "warmups": 2
+        }
+      ]
+    },
+    {
+      "kind": "tiny",
+      "size": 100,
+      "jobs": 4,
+      "cases": [
+        {
+          "name": "noop",
+          "samples": 100,
+          "warmups": 2
+        },
+        {
+          "name": "leaf",
+          "samples": 50,
+          "warmups": 2
+        },
+        {
+          "name": "full",
+          "samples": 5,
+          "warmups": 1
+        },
+        {
+          "name": "batch10",
+          "samples": 20,
+          "warmups": 2
+        }
+      ]
+    },
+    {
+      "kind": "tiny",
+      "size": 1000,
+      "jobs": 4,
+      "cases": [
+        {
+          "name": "noop",
+          "samples": 100,
+          "warmups": 2
+        },
+        {
+          "name": "leaf",
+          "samples": 50,
+          "warmups": 2
+        },
+        {
+          "name": "full",
+          "samples": 5,
+          "warmups": 1
+        },
+        {
+          "name": "batch10",
+          "samples": 20,
+          "warmups": 2
+        }
+      ]
+    },
+    {
+      "kind": "tiny",
+      "size": 10000,
+      "jobs": 4,
+      "cases": [
+        {
+          "name": "noop",
+          "samples": 100,
+          "warmups": 2
+        },
+        {
+          "name": "leaf",
+          "samples": 50,
+          "warmups": 2
+        },
+        {
+          "name": "full",
+          "samples": 5,
+          "warmups": 1
+        },
+        {
+          "name": "batch10",
+          "samples": 5,
+          "warmups": 1
+        }
+      ]
+    }
+  ]
+}
